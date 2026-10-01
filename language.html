@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Choose Your Language | KRISHI Sahyog</title>
+  <meta name="description" content="Select your preferred language for reading agriculture schemes, crop advisories, and weather alerts."/>
+  <meta name="theme-color" content="#0d631b"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/tailwind.js"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#0d631b",
+          "primary-container": "#2e7d32",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#cbffc2",
+          "secondary": "#79564b",
+          "secondary-container": "#fed0c1",
+          "on-secondary": "#ffffff",
+          "tertiary": "#774c00",
+          "tertiary-fixed": "#ffddb5",
+          "tertiary-fixed-dim": "#ffb957",
+          "surface": "#effcf9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#e9f7f3",
+          "surface-container": "#e3f1ed",
+          "surface-container-high": "#ddebe8",
+          "on-surface": "#121e1c",
+          "on-surface-variant": "#40493d",
+          "outline": "#707a6c",
+          "outline-variant": "#bfcaba"
+        },
+        fontFamily: {
+          "headline-xl": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Top Utility Ribbon -->
+  <header class="w-full bg-surface-container-lowest border-b border-surface-container-high py-2.5 px-4 sm:px-6">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="offline-status-chip inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant font-label-sm text-[12px] text-on-surface-variant">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="status-text font-medium" data-i18n="status_offline_ready">Offline ready</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center bg-surface-container-low rounded-full border border-outline-variant p-0.5" role="group">
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full" data-text-size="sm" type="button">A-</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface bg-surface-container rounded-full" data-text-size="md" type="button">A</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full" data-text-size="lg" type="button">A+</button>
+        </div>
+
+        <div class="flex items-center bg-surface-container-low rounded-full border border-outline-variant p-0.5 shadow-sm">
+          <button type="button" data-lang-switch="en" class="lang-toggle-en px-2.5 py-0.5 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary">EN</button>
+          <button type="button" data-lang-switch="hi" class="lang-toggle-hi px-2.5 py-0.5 rounded-full text-[12px] font-semibold text-on-surface-variant hover:text-on-surface transition-all">हिं</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Card Container -->
+  <main class="w-full max-w-[680px] mx-auto p-4 sm:p-6 my-auto">
+    <div class="bg-surface-container-lowest rounded-3xl border border-outline-variant p-6 sm:p-10 shadow-lg text-center">
+
+      <!-- Logo Emblem -->
+      <div class="flex flex-col items-center justify-center mb-4">
+        <img src="assets/logo.svg" alt="KRISHI Sahyog Logo" class="h-14 w-auto object-contain mb-3"/>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">
+          <span class="material-symbols-outlined text-[16px]">translate</span>
+          <span>Digital Kisan Access • डिजिटल किसान प्रवेश</span>
+        </span>
+      </div>
+
+      <h1 class="font-headline-xl text-2xl sm:text-3xl font-extrabold text-on-surface mb-2" data-i18n="language_choice_title">
+        Choose your language / अपनी भाषा चुनें
+      </h1>
+      <p class="text-xs sm:text-sm text-on-surface-variant max-w-lg mx-auto mb-8 leading-relaxed" data-i18n="language_choice_desc">
+        Select the language you are most comfortable with / वह भाषा चुनें जिसमें आप सहज हैं
+      </p>
+
+      <!-- 2 Language Choice Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-left">
+
+        <!-- Card: English -->
+        <div id="choice-card-en" class="language-card p-5 rounded-2xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-all bg-surface-container-low flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-outline">SCRIPT: LATIN</span>
+              <span class="check-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></span>
+            </div>
+            <h2 class="font-headline-md text-xl font-bold text-on-surface mb-1">English</h2>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Default language for reading schemes & agro-advisories
+            </p>
+          </div>
+          <span class="text-[11px] font-bold text-primary mt-4 block">Standard Script</span>
+        </div>
+
+        <!-- Card: Hindi -->
+        <div id="choice-card-hi" class="language-card p-5 rounded-2xl border-2 border-primary bg-primary/5 cursor-pointer transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-primary">मातृभाषा • HINDI</span>
+              <span class="check-indicator w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </span>
+            </div>
+            <h2 class="font-headline-md text-xl font-bold text-primary mb-1">हिन्दी (Hindi)</h2>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              कृषि योजनाओं और मौसम की दैनिक जानकारी सरल हिन्दी में
+            </p>
+          </div>
+          <span class="text-[11px] font-bold text-primary mt-4 block">अनुशंसित (Recommended)</span>
+        </div>
+
+      </div>
+
+      <!-- Hint Box -->
+      <div class="p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/60 flex items-center justify-center gap-2 text-xs text-on-surface-variant mb-6">
+        <span class="material-symbols-outlined text-primary text-[18px]">info</span>
+        <span data-i18n="language_choice_hint">You can change this anytime from the top of the screen. / आप इसे कभी भी स्क्रीन के ऊपर से बदल सकते हैं।</span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-3">
+        <button
+          type="button"
+          class="btn-voice-read w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-bold text-xs shadow-sm flex items-center justify-center gap-2 min-h-[48px]"
+          data-voice-text="Please choose English or Hindi to proceed with KRISHI Sahyog."
+        >
+          <span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+          <span data-i18n="language_choice_listen">Listen / बोलकर निर्देश सुनें</span>
+        </button>
+
+        <button
+          type="button"
+          id="btn-language-continue"
+          class="w-full flex-1 py-3.5 px-6 rounded-2xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors shadow-md flex items-center justify-center gap-2 min-h-[48px]"
+        >
+          <span data-i18n="language_choice_continue">Continue आगे बढ़ें</span>
+          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        </button>
+      </div>
+
+      <!-- Trust Notice -->
+      <div class="mt-8 pt-4 border-t border-surface-container-high flex flex-wrap items-center justify-center gap-4 text-xs text-outline font-semibold">
+        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">verified</span> 100% Free Public Service</span>
+        <span>•</span>
+        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">account_balance</span> Ministry of Agriculture & Farmers Welfare</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Simple Footer -->
+  <footer class="w-full text-center py-4 text-xs text-outline">
+    © 2026 KRISHI Sahyog • High-contrast rural civic design for Indian agriculture
+  </footer>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let selectedLanguage = localStorage.getItem('krishi_lang') || 'hi';
+
+  const cardEn = document.getElementById('choice-card-en');
+  const cardHi = document.getElementById('choice-card-hi');
+  const continueBtn = document.getElementById('btn-language-continue');
+
+  function updateCardsUI() {
+    if (selectedLanguage === 'en') {
+      cardEn.className = 'language-card p-5 rounded-2xl border-2 border-primary bg-primary/5 cursor-pointer transition-all flex flex-col justify-between';
+      cardEn.querySelector('.check-indicator').className = 'check-indicator w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center';
+      cardEn.querySelector('.check-indicator').innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+
+      cardHi.className = 'language-card p-5 rounded-2xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-all bg-surface-container-low flex flex-col justify-between';
+      cardHi.querySelector('.check-indicator').className = 'check-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center';
+      cardHi.querySelector('.check-indicator').innerHTML = '';
+    } else {
+      cardHi.className = 'language-card p-5 rounded-2xl border-2 border-primary bg-primary/5 cursor-pointer transition-all flex flex-col justify-between';
+      cardHi.querySelector('.check-indicator').className = 'check-indicator w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center';
+      cardHi.querySelector('.check-indicator').innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+
+      cardEn.className = 'language-card p-5 rounded-2xl border-2 border-outline-variant hover:border-primary cursor-pointer transition-all bg-surface-container-low flex flex-col justify-between';
+      cardEn.querySelector('.check-indicator').className = 'check-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center';
+      cardEn.querySelector('.check-indicator').innerHTML = '';
+    }
+  }
+
+  cardEn.addEventListener('click', () => {
+    selectedLanguage = 'en';
+    if (window.KrishiLang) window.KrishiLang.set('en');
+    updateCardsUI();
+  });
+
+  cardHi.addEventListener('click', () => {
+    selectedLanguage = 'hi';
+    if (window.KrishiLang) window.KrishiLang.set('hi');
+    updateCardsUI();
+  });
+
+  continueBtn.addEventListener('click', () => {
+    if (window.KrishiLang) {
+      window.KrishiLang.set(selectedLanguage);
+    } else {
+      localStorage.setItem('krishi_lang', selectedLanguage);
+    }
+    window.location.href = 'index.html';
+  });
+
+  updateCardsUI();
+});
+</script>
+</body>
+</html>

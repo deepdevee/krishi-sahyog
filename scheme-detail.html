@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Scheme Details | KRISHI Sahyog</title>
+  <meta name="description" content="Detailed guide on government agriculture scheme benefits, eligibility criteria, required documents, and application steps."/>
+  <meta name="theme-color" content="#0d631b"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/tailwind.js"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#0d631b",
+          "primary-container": "#2e7d32",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#cbffc2",
+          "primary-fixed": "#a3f69c",
+          "primary-fixed-dim": "#88d982",
+          "on-primary-fixed": "#002204",
+          "on-primary-fixed-variant": "#005312",
+          "secondary": "#79564b",
+          "secondary-container": "#fed0c1",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#79574c",
+          "secondary-fixed": "#ffdbcf",
+          "secondary-fixed-dim": "#e9bdae",
+          "on-secondary-fixed": "#2d150d",
+          "on-secondary-fixed-variant": "#5e3f35",
+          "tertiary": "#774c00",
+          "tertiary-container": "#986200",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#ffeede",
+          "tertiary-fixed": "#ffddb5",
+          "tertiary-fixed-dim": "#ffb957",
+          "on-tertiary-fixed": "#2a1800",
+          "on-tertiary-fixed-variant": "#643f00",
+          "surface": "#effcf9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#e9f7f3",
+          "surface-container": "#e3f1ed",
+          "surface-container-high": "#ddebe8",
+          "surface-container-highest": "#d8e5e2",
+          "surface-dim": "#cfddd9",
+          "surface-bright": "#effcf9",
+          "on-surface": "#121e1c",
+          "on-surface-variant": "#40493d",
+          "outline": "#707a6c",
+          "outline-variant": "#bfcaba",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a",
+          "background": "#effcf9",
+          "on-background": "#121e1c"
+        },
+        fontFamily: {
+          "headline-xl": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-sm": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "subtext-bilingual": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+<!-- Unified Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
+  <div class="bg-surface-container-low border-b border-surface-container-high">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="offline-status-chip inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant font-label-sm text-[12px] text-on-surface-variant shadow-sm transition-colors">
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse network-status-dot"></span>
+          <span class="status-text font-medium" data-i18n="status_offline_ready">Offline Ready</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div aria-label="Text size adjustments" class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5" role="group">
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="sm" title="Small text" type="button">A-</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface bg-surface-container rounded-full transition-colors" data-text-size="md" title="Default text" type="button">A</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="lg" title="Large text" type="button">A+</button>
+        </div>
+
+        <div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5 shadow-sm" role="group" aria-label="Language selection">
+          <button type="button" data-lang-switch="en" class="lang-toggle-en px-2.5 py-0.5 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary" aria-pressed="true">EN</button>
+          <button type="button" data-lang-switch="hi" class="lang-toggle-hi px-2.5 py-0.5 rounded-full text-[12px] font-semibold text-on-surface-variant hover:text-on-surface transition-all" aria-pressed="false">हिं</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-20 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 min-w-0 flex-shrink-0 group">
+      <img alt="KRISHI Sahyog Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="assets/logo.svg"/>
+      <div class="flex flex-col">
+        <span class="font-headline-md text-[20px] font-bold tracking-tight text-primary leading-none" data-i18n="app_name">KRISHI Sahyog</span>
+        <span class="font-subtext-bilingual text-[11px] text-on-surface-variant leading-tight mt-0.5" data-i18n="app_subtext">Digital Farmer Companion Portal</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
+      <a href="index.html" data-path="home" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_home">Home</span>
+      </a>
+      <a href="schemes.html" data-path="schemes" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors bg-primary-container text-on-primary font-bold">
+        <span data-i18n="nav_schemes">Schemes</span>
+      </a>
+      <a href="weather.html" data-path="weather" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_weather">Weather</span>
+      </a>
+      <a href="check-scheme.html" data-path="check-scheme" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_check_scheme">Check Scheme</span>
+      </a>
+      <a href="settings.html" data-path="settings" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_settings">Offline & Settings</span>
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors shadow-sm font-label-md text-sm min-h-[44px]" href="tel:18001801551">
+        <span class="material-symbols-outlined text-[20px] text-tertiary">call</span>
+        <div class="flex flex-col text-left">
+          <span class="leading-none font-bold" data-i18n="helpline_phone">1800-180-1551</span>
+          <span class="text-[11px] leading-tight text-on-tertiary-fixed-variant" data-i18n="helpline_label">Toll-Free Helpline</span>
+        </div>
+      </a>
+      <a href="login.html" class="header-user-btn w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm" title="Login / Account">
+        <span class="material-symbols-outlined text-[20px]">person</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-32 bg-surface min-h-[calc(100vh-200px)]">
+  <div id="scheme-detail-container" class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- Top Breadcrumb & Back Link -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-outline font-medium" aria-label="Breadcrumb">
+        <a href="index.html" class="hover:text-primary transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">home</span>
+          <span data-i18n="scheme_detail_breadcrumb_home">Home</span>
+        </a>
+        <span>/</span>
+        <a href="schemes.html" class="hover:text-primary transition-colors" data-i18n="scheme_detail_breadcrumb_schemes">Schemes</a>
+        <span>/</span>
+        <span id="detail-breadcrumb-current" class="text-on-surface font-bold">Scheme Detail</span>
+      </nav>
+
+      <a href="schemes.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline">
+        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        <span data-i18n="scheme_detail_back">Back to all schemes</span>
+      </a>
+    </div>
+
+    <!-- Scheme Header Card -->
+    <div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl border border-outline-variant shadow-sm mb-8">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span id="detail-scheme-badge" class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          Official Central Scheme
+        </span>
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-outline font-medium text-xs">
+          <span class="material-symbols-outlined text-[16px]">offline_pin</span>
+          <span data-i18n="scheme_detail_badge_offline">Offline Saved</span>
+        </span>
+        <span class="text-xs text-outline ml-auto">Verified October 2026</span>
+      </div>
+
+      <h1 id="detail-scheme-name" class="font-headline-xl text-2xl md:text-3xl lg:text-4xl font-extrabold text-on-surface mb-3 leading-tight">
+        Loading Scheme Details...
+      </h1>
+
+      <p class="text-xs text-on-surface-variant font-medium mb-6">
+        Ministry of Agriculture & Farmers Welfare • Direct Benefit Transfer (DBT) Assured Support
+      </p>
+
+      <!-- Action Buttons Row -->
+      <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-surface-container-high">
+        <button id="detail-audio-btn" type="button" class="btn-voice-read inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors text-xs font-bold shadow-sm min-h-[44px]">
+          <span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+          <span data-i18n="scheme_detail_listen">Listen in Audio</span>
+        </button>
+
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20agricultural%20scheme%20on%20KRISHI%20Sahyog" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container border border-outline-variant text-on-surface text-xs font-bold hover:bg-surface-container-high transition-colors min-h-[44px]">
+          <span class="material-symbols-outlined text-[20px] text-primary">share</span>
+          <span data-i18n="scheme_detail_share_whatsapp">Share on WhatsApp</span>
+        </a>
+
+        <a href="check-scheme.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary-container/60 border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container transition-colors min-h-[44px] ml-auto">
+          <span class="material-symbols-outlined text-[20px]">shield</span>
+          <span data-i18n="scheme_detail_verify">Verify Authenticity</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Core Benefit Highlight Box -->
+    <div class="p-6 md:p-8 rounded-3xl bg-secondary-container/40 border border-secondary/30 shadow-sm mb-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-secondary block mb-1" data-i18n="scheme_detail_benefit_title">What will I get?</span>
+          <div id="detail-benefit-amount" class="font-headline-xl text-3xl md:text-4xl font-extrabold text-primary mb-2">
+            ₹6,000 / yr
+          </div>
+          <p id="detail-benefit-detail" class="text-sm md:text-base text-on-secondary-container leading-relaxed max-w-xl">
+            Directly credited into your Aadhaar-linked bank account in equal installments.
+          </p>
+        </div>
+
+        <div class="bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant shadow-sm flex items-center gap-3.5 flex-shrink-0">
+          <span class="material-symbols-outlined text-primary text-[36px]">account_balance_wallet</span>
+          <div>
+            <div class="text-lg font-bold text-on-surface">11+ Crore</div>
+            <div class="text-xs text-on-surface-variant">Active Beneficiary Farmers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Bank Transfer Visual Banner -->
+    <div class="relative rounded-3xl overflow-hidden border border-outline-variant mb-8 shadow-sm">
+      <img src="assets/scheme-detail-hero.jpg" alt="Farmers in green field" class="w-full h-56 md:h-64 object-cover"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="material-symbols-outlined text-primary-fixed text-[24px]">verified</span>
+          <span class="font-bold text-base md:text-lg">Direct Bank Transfer (Zero Middlemen)</span>
+        </div>
+        <p class="text-xs md:text-sm text-gray-200 leading-relaxed max-w-xl">
+          Money is credited straight to your Aadhaar-seeded bank account through NPCI bridge. No commission, no agent fee.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6 Accordion / Detail Sections -->
+    <div class="flex flex-col gap-6 mb-12">
+
+      <!-- Section 1: Overview -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface mb-3 flex items-center gap-2" data-i18n="scheme_detail_sec1_title">
+          <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">1</span>
+          <span>What is this scheme?</span>
+        </h2>
+        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-4">
+          This central initiative is designed to provide direct financial security to farming households, ensuring funds for quality seeds, organic fertilizers, and farm equipment without falling into the trap of high-interest moneylenders.
+        </p>
+        <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60 flex items-center gap-3 text-xs text-primary font-bold">
+          <span class="material-symbols-outlined text-[20px]">agriculture</span>
+          <span>Empowering small, marginal, and tenant farmers across India with assured institutional support.</span>
+        </div>
+      </section>
+
+      <!-- Section 2: Eligibility & Ineligibility -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface mb-4 flex items-center gap-2" data-i18n="scheme_detail_sec2_title">
+          <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">2</span>
+          <span>Who can apply? (Eligibility & Exclusions)</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-5 rounded-xl bg-surface-container-low border border-primary/20">
+            <h3 class="font-label-lg text-sm font-bold text-primary mb-3 flex items-center gap-1.5" data-i18n="scheme_detail_sec2_eligible">
+              <span class="material-symbols-outlined text-[18px]">check_circle</span>
+              <span>Eligible Farmers</span>
+            </h3>
+            <ul id="detail-eligibility-list" class="space-y-2.5 text-xs text-on-surface">
+              <!-- Injected by js/schemes.js -->
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-xl bg-error-container/20 border border-error/20">
+            <h3 class="font-label-lg text-sm font-bold text-error mb-3 flex items-center gap-1.5" data-i18n="scheme_detail_sec2_ineligible">
+              <span class="material-symbols-outlined text-[18px]">cancel</span>
+              <span>Ineligible / Excluded</span>
+            </h3>
+            <ul id="detail-ineligible-list" class="space-y-2.5 text-xs text-on-surface">
+              <!-- Injected by js/schemes.js -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Required Documents -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface mb-4 flex items-center gap-2" data-i18n="scheme_detail_sec3_title">
+          <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">3</span>
+          <span>Documents you need (Checklist)</span>
+        </h2>
+        <div id="detail-documents-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Injected by js/schemes.js -->
+        </div>
+      </section>
+
+      <!-- Section 4: 4-Step Application Guide -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface mb-4 flex items-center gap-2" data-i18n="scheme_detail_sec4_title">
+          <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">4</span>
+          <span>How to apply? (Step-by-Step)</span>
+        </h2>
+        <div id="detail-steps-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          <!-- Injected by js/schemes.js -->
+        </div>
+        <div class="p-4 rounded-xl bg-secondary-container/40 border border-secondary/30 text-xs text-on-secondary-container leading-relaxed" data-i18n="scheme_detail_sec4_notice">
+          Official Cost Notice: The official government service fee at CSC Village Level Entrepreneur centers is fixed at only ₹15. Do not pay any extra commission.
+        </div>
+      </section>
+
+      <!-- Section 5: Helplines & External Link -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <div class="flex items-center justify-between gap-4 mb-4">
+          <h2 class="font-headline-md text-xl font-bold text-on-surface flex items-center gap-2" data-i18n="scheme_detail_sec5_title">
+            <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
+            <span>Where to go & Official Helplines</span>
+          </h2>
+          <a id="detail-official-link-btn" href="https://pmkisan.gov.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors shadow-sm">
+            <span data-i18n="scheme_detail_official_btn">Go to Official Portal</span>
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+        </div>
+        <div id="detail-helpline-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Injected by js/schemes.js -->
+        </div>
+      </section>
+
+      <!-- Section 6: Frequently Asked Questions (FAQ) -->
+      <section class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface mb-4 flex items-center gap-2" data-i18n="scheme_detail_sec6_title">
+          <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
+          <span>Common Questions & Solved Problems (FAQ)</span>
+        </h2>
+        <div id="detail-faq-list" class="flex flex-col gap-3">
+          <!-- Injected by js/schemes.js -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Suspicious SMS Callout Banner -->
+    <div class="p-6 rounded-2xl bg-secondary-container/50 border border-secondary/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-secondary text-[28px] flex-shrink-0">sms_failed</span>
+        <div>
+          <h3 class="font-headline-md text-base font-bold text-on-secondary-container">
+            Did you receive an SMS asking for money to release funds?
+          </h3>
+          <p class="text-xs text-on-secondary-container/90 mt-0.5">
+            Beware: The government NEVER charges money or sends non-gov.in payment links.
+          </p>
+        </div>
+      </div>
+      <a href="check-scheme.html" class="px-5 py-2.5 rounded-xl bg-secondary text-on-secondary font-bold text-xs hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm">
+        Check SMS / Link Here
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Unified Footer -->
+<footer class="w-full bg-surface-container border-t border-surface-container-high text-on-surface mt-16 mb-16 md:mb-0">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-6 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm flex items-start gap-4">
+        <div class="p-3 rounded-xl bg-tertiary-fixed text-tertiary flex-shrink-0">
+          <span class="material-symbols-outlined text-[28px]">support_agent</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1" data-i18n="footer_kcc_title">Kisan Call Centre Helpline</h3>
+          <a href="tel:18001801551" class="text-xl font-bold text-tertiary hover:underline block mb-1.5" data-i18n="helpline_phone">1800-180-1551</a>
+          <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="footer_kcc_time">
+            6:00 AM to 10:00 PM daily • Available across 22 regional Indian languages.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 flex flex-col gap-4">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center justify-between gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-error text-[24px] mt-0.5">report</span>
+            <div>
+              <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_report_fraud_title">Encountered a suspicious link or message?</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_report_fraud_desc">Report unauthorized agents or illegal fee collection cases directly.</p>
+            </div>
+          </div>
+          <a href="check-scheme.html" class="px-4 py-2 rounded-xl bg-error text-on-error text-xs font-bold whitespace-nowrap shadow-sm hover:opacity-90 transition-opacity" data-i18n="footer_report_fraud_btn">Report Fraud</a>
+        </div>
+
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-[24px]">offline_pin</span>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_offline_guarantee_title">Offline Guarantee</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_offline_guarantee_desc">All saved schemes and today's weather remain readable without an active internet connection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <p class="max-w-3xl leading-relaxed" data-i18n="footer_disclaimer">
+        Notice: KRISHI Sahyog is a non-profit farmer assistance companion. Information is aggregated directly from official Government portals (pmkisan.gov.in, agricoop.nic.in, mausam.imd.gov.in). We never ask for bank passwords, OTPs, or application processing fees.
+      </p>
+      <p class="whitespace-nowrap font-medium" data-i18n="footer_copyright">
+        © 2026 KRISHI Sahyog Digital Kisan Portal.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/98 backdrop-blur-md border-t border-surface-container-high shadow-[0_-2px_10px_rgba(0,0,0,0.06)] px-2 py-1 flex items-center justify-around" aria-label="Mobile Navigation">
+  <a href="index.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">home</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_home">Home</span>
+  </a>
+  <a href="schemes.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-primary font-bold">
+    <span class="material-symbols-outlined text-[22px]">format_list_bulleted</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_schemes">Schemes</span>
+  </a>
+  <a href="weather.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">partly_cloudy_day</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_weather">Weather</span>
+  </a>
+  <a href="check-scheme.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">verified_user</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_check_scheme">Check Scheme</span>
+  </a>
+  <a href="settings.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">settings</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_settings">Settings</span>
+  </a>
+</nav>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/schemes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

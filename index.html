@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>KRISHI Sahyog - Farmer Platform</title>
+  <meta name="description" content="KRISHI Sahyog - Digital Farmer Companion Portal for Government Schemes, Weather and Fraud Protection"/>
+  <meta name="theme-color" content="#0d631b"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/tailwind.js"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#0d631b",
+          "primary-container": "#2e7d32",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#cbffc2",
+          "primary-fixed": "#a3f69c",
+          "primary-fixed-dim": "#88d982",
+          "on-primary-fixed": "#002204",
+          "on-primary-fixed-variant": "#005312",
+          "secondary": "#79564b",
+          "secondary-container": "#fed0c1",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#79574c",
+          "secondary-fixed": "#ffdbcf",
+          "secondary-fixed-dim": "#e9bdae",
+          "on-secondary-fixed": "#2d150d",
+          "on-secondary-fixed-variant": "#5e3f35",
+          "tertiary": "#774c00",
+          "tertiary-container": "#986200",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#ffeede",
+          "tertiary-fixed": "#ffddb5",
+          "tertiary-fixed-dim": "#ffb957",
+          "on-tertiary-fixed": "#2a1800",
+          "on-tertiary-fixed-variant": "#643f00",
+          "surface": "#effcf9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#e9f7f3",
+          "surface-container": "#e3f1ed",
+          "surface-container-high": "#ddebe8",
+          "surface-container-highest": "#d8e5e2",
+          "surface-dim": "#cfddd9",
+          "surface-bright": "#effcf9",
+          "on-surface": "#121e1c",
+          "on-surface-variant": "#40493d",
+          "outline": "#707a6c",
+          "outline-variant": "#bfcaba",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a",
+          "background": "#effcf9",
+          "on-background": "#121e1c"
+        },
+        fontFamily: {
+          "headline-xl": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-sm": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "subtext-bilingual": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+<!-- Unified Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
+  <!-- Top Utility Ribbon -->
+  <div class="bg-surface-container-low border-b border-surface-container-high">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
+      <!-- Network / Offline Chip -->
+      <div class="flex items-center gap-2">
+        <span class="offline-status-chip inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant font-label-sm text-[12px] text-on-surface-variant shadow-sm transition-colors">
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse network-status-dot"></span>
+          <span class="status-text font-medium" data-i18n="status_offline_ready">Offline Ready</span>
+        </span>
+      </div>
+
+      <!-- Controls: Text Sizing and Language Switcher -->
+      <div class="flex items-center gap-3">
+        <!-- Text Size Buttons -->
+        <div aria-label="Text size adjustments" class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5" role="group">
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="sm" title="Small text" type="button">A-</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface bg-surface-container rounded-full transition-colors" data-text-size="md" title="Default text" type="button">A</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="lg" title="Large text" type="button">A+</button>
+        </div>
+
+        <!-- Single-Language Switcher (EN / हिं) -->
+        <div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5 shadow-sm" role="group" aria-label="Language selection">
+          <button type="button" data-lang-switch="en" class="lang-toggle-en px-2.5 py-0.5 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary" aria-pressed="true">EN</button>
+          <button type="button" data-lang-switch="hi" class="lang-toggle-hi px-2.5 py-0.5 rounded-full text-[12px] font-semibold text-on-surface-variant hover:text-on-surface transition-all" aria-pressed="false">हिं</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Row -->
+  <div class="h-20 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-3 min-w-0 flex-shrink-0 group">
+      <img alt="KRISHI Sahyog Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="assets/logo.svg"/>
+      <div class="flex flex-col">
+        <span class="font-headline-md text-[20px] font-bold tracking-tight text-primary leading-none" data-i18n="app_name">KRISHI Sahyog</span>
+        <span class="font-subtext-bilingual text-[11px] text-on-surface-variant leading-tight mt-0.5" data-i18n="app_subtext">Digital Farmer Companion Portal</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
+      <a href="index.html" data-path="home" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors bg-primary-container text-on-primary font-bold">
+        <span data-i18n="nav_home">Home</span>
+      </a>
+      <a href="schemes.html" data-path="schemes" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_schemes">Schemes</span>
+      </a>
+      <a href="weather.html" data-path="weather" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_weather">Weather</span>
+      </a>
+      <a href="check-scheme.html" data-path="check-scheme" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_check_scheme">Check Scheme</span>
+      </a>
+      <a href="settings.html" data-path="settings" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_settings">Offline & Settings</span>
+      </a>
+    </nav>
+
+    <!-- Header Actions (Helpline & Login) -->
+    <div class="flex items-center gap-3">
+      <a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors shadow-sm font-label-md text-sm min-h-[44px]" href="tel:18001801551">
+        <span class="material-symbols-outlined text-[20px] text-tertiary">call</span>
+        <div class="flex flex-col text-left">
+          <span class="leading-none font-bold" data-i18n="helpline_phone">1800-180-1551</span>
+          <span class="text-[11px] leading-tight text-on-tertiary-fixed-variant" data-i18n="helpline_label">Toll-Free Helpline</span>
+        </div>
+      </a>
+      <a href="login.html" class="header-user-btn w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm" title="Login / Account">
+        <span class="material-symbols-outlined text-[20px]">person</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-32 bg-surface min-h-[calc(100vh-200px)]">
+  <div class="flex flex-col w-full">
+
+    <!-- Top Farmer Safety Banner -->
+    <section class="w-full bg-secondary-container text-on-secondary-container px-4 py-3 shadow-sm">
+      <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="p-1.5 rounded-lg bg-secondary text-on-secondary flex-shrink-0 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">gpp_maybe</span>
+          </span>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+            <span class="font-label-md font-bold text-on-secondary-container" data-i18n="safety_banner_title">Safety Alert:</span>
+            <p class="font-body-md text-on-secondary-container text-[14px] leading-snug" data-i18n="safety_banner_desc">
+              Government schemes NEVER demand processing fees or WhatsApp money transfers.
+            </p>
+          </div>
+        </div>
+        <a class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-sm shadow-sm hover:opacity-95 transition-opacity whitespace-nowrap min-h-[44px]" href="check-scheme.html">
+          <span class="material-symbols-outlined text-[18px]">verified_user</span>
+          <span data-i18n="safety_banner_action">Verify Now</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative w-full py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-surface-container-low overflow-hidden">
+      <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-16 bottom-0 w-72 h-72 rounded-full bg-tertiary-fixed/40 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-[1200px] mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Left: Hero Text & Search -->
+          <div class="lg:col-span-7 flex flex-col">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-[12px] self-start mb-4 shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">agriculture</span>
+              <span data-i18n="hero_badge">Empowering 14 Crore Indian Farmers • 24x7 Kisan Companion</span>
+            </div>
+
+            <h1 class="font-headline-xl text-3xl md:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight mb-3" data-i18n="hero_title">
+              Your Farming Partner for Schemes, Weather & Safety
+            </h1>
+
+            <p class="font-body-lg text-base md:text-lg text-on-surface-variant max-w-2xl mb-8 leading-relaxed" data-i18n="hero_subtitle">
+              Trusted government schemes, village-level weather forecasts, and quick fraud checks all in one simple place.
+            </p>
+
+            <!-- Search Bar Form -->
+            <form action="schemes.html" method="GET" class="bg-surface-container-lowest p-2 rounded-2xl shadow-md border-2 border-outline-variant focus-within:border-primary transition-colors max-w-2xl">
+              <div class="flex flex-col sm:flex-row items-center gap-2">
+                <div class="flex items-center flex-1 w-full px-3 gap-2 min-h-[52px]">
+                  <span class="material-symbols-outlined text-outline text-[24px]">search</span>
+                  <input
+                    aria-label="Search schemes or subsidies"
+                    class="w-full bg-transparent font-body-md text-on-surface placeholder:text-outline focus:outline-none min-h-[44px]"
+                    name="q"
+                    data-i18n-placeholder="hero_search_placeholder"
+                    placeholder="Search a scheme, crop, or subsidy (e.g., PM Kisan, Tractor, Solar Pump)..."
+                    type="text"
+                  />
+                  <!-- Voice Search Trigger -->
+                  <button
+                    class="btn-voice-read p-2.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors flex items-center justify-center min-w-[44px] min-h-[44px] shadow-sm flex-shrink-0"
+                    title="Speak to Search"
+                    type="button"
+                    data-voice-text="Please speak the name of the agricultural scheme, crop, or subsidy you are looking for."
+                  >
+                    <span class="material-symbols-outlined text-[22px] text-tertiary">mic</span>
+                  </button>
+                </div>
+                <button
+                  class="w-full sm:w-auto px-6 py-3 rounded-xl bg-primary text-on-primary font-label-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm min-h-[52px] flex-shrink-0"
+                  type="submit"
+                >
+                  <span class="material-symbols-outlined text-[20px]">search</span>
+                  <span data-i18n="hero_search_btn">Search</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Quick Search Tags -->
+            <div class="flex flex-wrap items-center gap-2 mt-4 text-xs">
+              <span class="text-outline font-semibold" data-i18n="hero_quick_tags_label">Popular searches:</span>
+              <a href="schemes.html?q=PM-KISAN" class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary text-on-surface transition-colors">PM-KISAN (₹6,000)</a>
+              <a href="schemes.html?q=KCC" class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary text-on-surface transition-colors">Kisan Credit Card (4%)</a>
+              <a href="schemes.html?q=Fasal+Bima" class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary text-on-surface transition-colors">Crop Insurance (PMFBY)</a>
+              <a href="schemes.html?q=Solar+Pump" class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary text-on-surface transition-colors">Solar Pump (KUSUM)</a>
+            </div>
+          </div>
+
+          <!-- Right: Visual Banner & DBT Tracker -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <div class="relative rounded-3xl overflow-hidden shadow-lg border border-outline-variant group">
+              <img src="assets/farmer-hero.jpg" alt="Farmer in field" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+                <span class="inline-block px-2.5 py-0.5 rounded bg-primary text-on-primary text-[11px] font-extrabold uppercase tracking-wider mb-2 self-start" data-i18n="hero_banner_dbt_tag">DIRECT DBT TRACKER</span>
+                <h3 class="font-headline-md text-xl font-bold leading-snug" data-i18n="hero_banner_dbt_title">
+                  17th Installment credited to 9.2 Crore eligible accounts
+                </h3>
+              </div>
+            </div>
+
+            <!-- Voice Read Assistance Card -->
+            <div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+                  <span class="material-symbols-outlined text-[24px]">volume_up</span>
+                </div>
+                <div>
+                  <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="hero_voice_prompt">Need voice assistance?</h4>
+                  <p class="text-xs text-on-surface-variant">Listen to instructions in simple spoken audio</p>
+                </div>
+              </div>
+              <button type="button" class="btn-voice-read px-4 py-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors text-xs font-bold shadow-sm" data-voice-text="Welcome to KRISHI Sahyog. You can check government schemes, village weather advisories, and verify if a message is real or fake." data-i18n="hero_voice_btn">
+                Listen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Core Navigation Feature Cards -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Feature 1: Government Schemes -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[28px]">account_balance</span>
+            </div>
+            <h2 class="font-headline-md text-xl font-bold text-on-surface mb-2" data-i18n="card_schemes_title">Government Schemes</h2>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6" data-i18n="card_schemes_desc">
+              Find financial aid, fertilizer subsidies, and equipment grants you qualify for.
+            </p>
+          </div>
+          <a href="schemes.html" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors shadow-sm min-h-[46px]">
+            <span data-i18n="card_schemes_btn">Browse Schemes</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </article>
+
+        <!-- Feature 2: Farming Weather & Advisory -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[28px]">partly_cloudy_day</span>
+            </div>
+            <h2 class="font-headline-md text-xl font-bold text-on-surface mb-2" data-i18n="card_weather_title">Farming Weather & Advisory</h2>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6" data-i18n="card_weather_desc">
+              7-day block-level forecast and agricultural advice on exactly when to spray, irrigate, or harvest.
+            </p>
+          </div>
+          <a href="weather.html" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors shadow-sm min-h-[46px]">
+            <span data-i18n="card_weather_btn">Check Weather</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </article>
+
+        <!-- Feature 3: Is This Scheme Real? -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-secondary-container text-secondary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[28px]">verified_user</span>
+            </div>
+            <h2 class="font-headline-md text-xl font-bold text-on-surface mb-2" data-i18n="card_check_title">Is This Scheme Real?</h2>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6" data-i18n="card_check_desc">
+              Received a suspicious WhatsApp message or SMS promising free tractors or cash grants? Paste here to verify.
+            </p>
+          </div>
+          <a href="check-scheme.html" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary text-on-secondary font-bold text-sm hover:opacity-90 transition-opacity shadow-sm min-h-[46px]">
+            <span data-i18n="card_check_btn">Verify a Scheme</span>
+            <span class="material-symbols-outlined text-[18px]">shield</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Live Weather Snippet Widget -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 mb-12">
+      <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-surface-container-high">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-[32px]">partly_cloudy_day</span>
+            <div>
+              <h3 class="font-headline-md text-lg font-bold text-on-surface">Wardha, Maharashtra</h3>
+              <p class="text-xs text-on-surface-variant" data-i18n="weather_widget_title">Live Agro-Weather • India Meteorological Department (IMD)</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-on-surface">29°C</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-semibold">Partly Cloudy</span>
+            <a href="weather.html" class="text-xs font-bold text-primary hover:underline flex items-center gap-0.5 ml-2" data-i18n="weather_widget_full_link">
+              <span>Full 7-day forecast</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 text-center border-b border-surface-container-high">
+          <div>
+            <span class="text-xs text-outline block mb-0.5" data-i18n="weather_widget_rain">Rain</span>
+            <span class="font-bold text-primary text-base">15% Chance</span>
+          </div>
+          <div>
+            <span class="text-xs text-outline block mb-0.5" data-i18n="weather_widget_wind">Wind</span>
+            <span class="font-bold text-on-surface text-base">11 km/h</span>
+          </div>
+          <div>
+            <span class="text-xs text-outline block mb-0.5" data-i18n="weather_widget_humidity">Humidity</span>
+            <span class="font-bold text-on-surface text-base">68% Moisture</span>
+          </div>
+          <div>
+            <span class="text-xs text-outline block mb-0.5">Field Status</span>
+            <span class="font-bold text-primary text-base">Optimal Spraying</span>
+          </div>
+        </div>
+
+        <div class="pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-on-surface-variant">
+          <p class="leading-relaxed">
+            <strong class="text-primary font-bold" data-i18n="weather_widget_advisory_label">Actionable Advisory:</strong>
+            Optimal soil moisture for Cotton & Soybean germination. Isolated light showers expected Friday; complete pesticide spraying by Thursday morning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Schemes Section -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-14">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface" data-i18n="popular_schemes_title">Popular Government Schemes for You</h2>
+          <p class="text-sm text-on-surface-variant mt-0.5">Direct benefits and subsidies verified for Indian agriculture</p>
+        </div>
+        <a href="schemes.html" class="inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline">
+          <span data-i18n="popular_schemes_view_all">View all schemes</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1: PM-KISAN -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">DBT Cash</span>
+              <span class="text-xs text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">offline_pin</span> Offline</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">
+              <a href="scheme-detail.html?id=pm-kisan" class="hover:text-primary transition-colors">PM-KISAN Samman Nidhi</a>
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Guaranteed financial benefit of ₹6,000 per year in 3 equal installments credited straight into small & marginal farmer accounts.
+            </p>
+            <div class="p-3 rounded-xl bg-surface-container-low mb-4">
+              <span class="text-xs text-outline block">Benefit Amount</span>
+              <span class="text-lg font-bold text-primary">₹6,000 / yr</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-3 border-t border-surface-container-high">
+            <a href="scheme-detail.html?id=pm-kisan" class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary text-center font-bold text-xs hover:bg-primary-container transition-colors" data-i18n="popular_schemes_read_guide">Read Guide</a>
+            <button class="btn-voice-read p-2 rounded-xl bg-tertiary-fixed text-tertiary" data-voice-text="Pradhan Mantri Kisan Samman Nidhi gives ₹6,000 yearly benefit." title="Listen"><span class="material-symbols-outlined text-[18px]">volume_up</span></button>
+          </div>
+        </article>
+
+        <!-- Card 2: PMFBY -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">Crop Insurance</span>
+              <span class="text-xs text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">offline_pin</span> Offline</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">
+              <a href="scheme-detail.html?id=pmfby" class="hover:text-primary transition-colors">PM Fasal Bima Yojana (PMFBY)</a>
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Comprehensive financial coverage against crop loss due to drought, unseasonal floods, hailstorms or pests.
+            </p>
+            <div class="p-3 rounded-xl bg-surface-container-low mb-4">
+              <span class="text-xs text-outline block">Farmer Premium</span>
+              <span class="text-lg font-bold text-primary">Only 1.5% - 2%</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-3 border-t border-surface-container-high">
+            <a href="scheme-detail.html?id=pmfby" class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary text-center font-bold text-xs hover:bg-primary-container transition-colors" data-i18n="popular_schemes_read_guide">Read Guide</a>
+            <button class="btn-voice-read p-2 rounded-xl bg-tertiary-fixed text-tertiary" data-voice-text="Pradhan Mantri Fasal Bima Yojana covers crop losses at just 1.5 to 2 percent premium." title="Listen"><span class="material-symbols-outlined text-[18px]">volume_up</span></button>
+          </div>
+        </article>
+
+        <!-- Card 3: KCC -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">Low Interest Loan</span>
+              <span class="text-xs text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">offline_pin</span> Offline</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">
+              <a href="scheme-detail.html?id=kcc" class="hover:text-primary transition-colors">Kisan Credit Card (KCC)</a>
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Institutional short-term crop loans up to ₹3,00,000 at heavily subsidized 4% interest rate with RuPay ATM Card.
+            </p>
+            <div class="p-3 rounded-xl bg-surface-container-low mb-4">
+              <span class="text-xs text-outline block">Effective Rate</span>
+              <span class="text-lg font-bold text-primary">4.0% p.a.</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-3 border-t border-surface-container-high">
+            <a href="scheme-detail.html?id=kcc" class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary text-center font-bold text-xs hover:bg-primary-container transition-colors" data-i18n="popular_schemes_read_guide">Read Guide</a>
+            <button class="btn-voice-read p-2 rounded-xl bg-tertiary-fixed text-tertiary" data-voice-text="Kisan Credit Card gives loans up to 3 lakh at 4 percent interest." title="Listen"><span class="material-symbols-outlined text-[18px]">volume_up</span></button>
+          </div>
+        </article>
+
+        <!-- Card 4: Soil Health Card -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">Free Farm Test</span>
+              <span class="text-xs text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">offline_pin</span> Offline</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">
+              <a href="scheme-detail.html?id=soil-health-card" class="hover:text-primary transition-colors">Soil Health Card Scheme</a>
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Free scientific testing of farm soil nutrients (NPK) with specific recommendations to reduce fertilizer costs.
+            </p>
+            <div class="p-3 rounded-xl bg-surface-container-low mb-4">
+              <span class="text-xs text-outline block">Testing Fee</span>
+              <span class="text-lg font-bold text-primary">100% Free</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-3 border-t border-surface-container-high">
+            <a href="scheme-detail.html?id=soil-health-card" class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary text-center font-bold text-xs hover:bg-primary-container transition-colors" data-i18n="popular_schemes_read_guide">Read Guide</a>
+            <button class="btn-voice-read p-2 rounded-xl bg-tertiary-fixed text-tertiary" data-voice-text="Soil Health Card gives free scientific soil testing." title="Listen"><span class="material-symbols-outlined text-[18px]">volume_up</span></button>
+          </div>
+        </article>
+
+        <!-- Card 5: PM-KUSUM -->
+        <article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">Solar Subsidy</span>
+              <span class="text-xs text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">offline_pin</span> Offline</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1">
+              <a href="scheme-detail.html?id=pm-kusum" class="hover:text-primary transition-colors">PM-KUSUM Solar Pump Scheme</a>
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Up to 60% government subsidy to replace costly diesel generator pumps with modern standalone solar pumps.
+            </p>
+            <div class="p-3 rounded-xl bg-surface-container-low mb-4">
+              <span class="text-xs text-outline block">Govt Subsidy</span>
+              <span class="text-lg font-bold text-primary">Up to 60%</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-3 border-t border-surface-container-high">
+            <a href="scheme-detail.html?id=pm-kusum" class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary text-center font-bold text-xs hover:bg-primary-container transition-colors" data-i18n="popular_schemes_read_guide">Read Guide</a>
+            <button class="btn-voice-read p-2 rounded-xl bg-tertiary-fixed text-tertiary" data-voice-text="PM-KUSUM scheme offers up to 60% subsidy for solar water pumps." title="Listen"><span class="material-symbols-outlined text-[18px]">volume_up</span></button>
+          </div>
+        </article>
+
+        <!-- Card 6: Fraud Check Spotlight -->
+        <article class="p-6 rounded-2xl bg-secondary-container/40 border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[12px] font-bold text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full">Rapid Verification</span>
+              <span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+            </div>
+            <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1" data-i18n="fraud_spotlight_title">
+              Received another scheme link?
+            </h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4" data-i18n="fraud_spotlight_desc">
+              Do not share Aadhaar or bank OTPs on suspicious websites. Our AI instantly matches forwards with official government gazettes.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-outline-variant/40">
+            <a href="check-scheme.html" class="w-full py-2.5 px-4 rounded-xl bg-secondary text-on-secondary text-center font-bold text-xs hover:opacity-90 transition-opacity block" data-i18n="fraud_spotlight_btn">
+              Check Suspicious SMS / WhatsApp
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Offline Vault Banner -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-14">
+      <div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[32px]">cloud_sync</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="font-headline-md text-lg font-bold text-on-surface" data-i18n="offline_vault_title">Offline Vault Active</h3>
+              <span class="text-[11px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="offline_vault_badge">100% Synced</span>
+            </div>
+            <p class="text-xs text-on-surface-variant max-w-xl leading-relaxed" data-i18n="offline_vault_desc">
+              All 54 major central schemes, helpline directories, and today's weather advisory are saved locally on your phone or computer.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <button type="button" onclick="alert('Offline Vault has synced the latest scheme revisions and weather metrics!')" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors shadow-sm min-h-[44px]">
+            <span class="material-symbols-outlined text-[18px]">sync</span>
+            <span data-i18n="offline_vault_sync_btn">Sync Updates</span>
+          </button>
+          <a href="settings.html" class="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface-container border border-outline-variant text-on-surface font-bold text-xs hover:bg-surface-container-high transition-colors min-h-[44px]">
+            <span class="material-symbols-outlined text-[18px]">storage</span>
+            <span data-i18n="offline_vault_details_btn">Storage Details</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[24px]">verified</span>
+          </div>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="trust_free_title">100% Free Public Service</h4>
+            <p class="text-xs text-on-surface-variant" data-i18n="trust_free_desc">No hidden processing fees</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[24px]">lock</span>
+          </div>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="trust_privacy_title">No Login or Aadhaar Stored</h4>
+            <p class="text-xs text-on-surface-variant" data-i18n="trust_privacy_desc">Instant anonymous access</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[24px]">account_balance</span>
+          </div>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="trust_govt_title">Verified Govt Portals</h4>
+            <p class="text-xs text-on-surface-variant" data-i18n="trust_govt_desc">Only official .gov.in links</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpline Callout Banner -->
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8">
+      <div class="p-8 rounded-3xl bg-tertiary-container text-on-tertiary-container flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[32px]">phone_in_talk</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-xl font-bold text-white mb-1" data-i18n="cta_helpline_title">
+              Need phone support right now?
+            </h3>
+            <p class="text-sm text-on-tertiary-container/90 max-w-xl leading-relaxed" data-i18n="cta_helpline_desc">
+              Speak with an agricultural expert in your regional dialect at the Government Kisan Call Centre.
+            </p>
+          </div>
+        </div>
+        <a href="tel:18001801551" class="px-8 py-3.5 rounded-2xl bg-surface-container-lowest text-tertiary font-bold text-base hover:bg-surface-container transition-colors shadow-md flex items-center gap-2 whitespace-nowrap min-h-[52px]">
+          <span class="material-symbols-outlined text-[22px]">call</span>
+          <span>1800-180-1551</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Unified Footer -->
+<footer class="w-full bg-surface-container border-t border-surface-container-high text-on-surface mt-16 mb-16 md:mb-0">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-6 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm flex items-start gap-4">
+        <div class="p-3 rounded-xl bg-tertiary-fixed text-tertiary flex-shrink-0">
+          <span class="material-symbols-outlined text-[28px]">support_agent</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1" data-i18n="footer_kcc_title">Kisan Call Centre Helpline</h3>
+          <a href="tel:18001801551" class="text-xl font-bold text-tertiary hover:underline block mb-1.5" data-i18n="helpline_phone">1800-180-1551</a>
+          <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="footer_kcc_time">
+            6:00 AM to 10:00 PM daily • Available across 22 regional Indian languages.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 flex flex-col gap-4">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center justify-between gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-error text-[24px] mt-0.5">report</span>
+            <div>
+              <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_report_fraud_title">Encountered a suspicious link or message?</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_report_fraud_desc">Report unauthorized agents or illegal fee collection cases directly.</p>
+            </div>
+          </div>
+          <a href="check-scheme.html" class="px-4 py-2 rounded-xl bg-error text-on-error text-xs font-bold whitespace-nowrap shadow-sm hover:opacity-90 transition-opacity" data-i18n="footer_report_fraud_btn">Report Fraud</a>
+        </div>
+
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-[24px]">offline_pin</span>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_offline_guarantee_title">Offline Guarantee</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_offline_guarantee_desc">All saved schemes and today's weather remain readable without an active internet connection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <p class="max-w-3xl leading-relaxed" data-i18n="footer_disclaimer">
+        Notice: KRISHI Sahyog is a non-profit farmer assistance companion. Information is aggregated directly from official Government portals (pmkisan.gov.in, agricoop.nic.in, mausam.imd.gov.in). We never ask for bank passwords, OTPs, or application processing fees.
+      </p>
+      <p class="whitespace-nowrap font-medium" data-i18n="footer_copyright">
+        © 2026 KRISHI Sahyog Digital Kisan Portal.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/98 backdrop-blur-md border-t border-surface-container-high shadow-[0_-2px_10px_rgba(0,0,0,0.06)] px-2 py-1 flex items-center justify-around" aria-label="Mobile Navigation">
+  <a href="index.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-primary font-bold">
+    <span class="material-symbols-outlined text-[22px]">home</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_home">Home</span>
+  </a>
+  <a href="schemes.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">format_list_bulleted</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_schemes">Schemes</span>
+  </a>
+  <a href="weather.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">partly_cloudy_day</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_weather">Weather</span>
+  </a>
+  <a href="check-scheme.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">verified_user</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_check_scheme">Check Scheme</span>
+  </a>
+  <a href="settings.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">settings</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_settings">Settings</span>
+  </a>
+</nav>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

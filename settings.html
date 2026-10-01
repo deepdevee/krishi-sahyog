@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Offline Mode & App Settings | KRISHI Sahyog</title>
+  <meta name="description" content="Manage downloaded agricultural schemes, offline storage, text sizes, themes, and regional language preferences."/>
+  <meta name="theme-color" content="#0d631b"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/tailwind.js"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#0d631b",
+          "primary-container": "#2e7d32",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#cbffc2",
+          "primary-fixed": "#a3f69c",
+          "primary-fixed-dim": "#88d982",
+          "on-primary-fixed": "#002204",
+          "on-primary-fixed-variant": "#005312",
+          "secondary": "#79564b",
+          "secondary-container": "#fed0c1",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#79574c",
+          "secondary-fixed": "#ffdbcf",
+          "secondary-fixed-dim": "#e9bdae",
+          "on-secondary-fixed": "#2d150d",
+          "on-secondary-fixed-variant": "#5e3f35",
+          "tertiary": "#774c00",
+          "tertiary-container": "#986200",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#ffeede",
+          "tertiary-fixed": "#ffddb5",
+          "tertiary-fixed-dim": "#ffb957",
+          "on-tertiary-fixed": "#2a1800",
+          "on-tertiary-fixed-variant": "#643f00",
+          "surface": "#effcf9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#e9f7f3",
+          "surface-container": "#e3f1ed",
+          "surface-container-high": "#ddebe8",
+          "surface-container-highest": "#d8e5e2",
+          "surface-dim": "#cfddd9",
+          "surface-bright": "#effcf9",
+          "on-surface": "#121e1c",
+          "on-surface-variant": "#40493d",
+          "outline": "#707a6c",
+          "outline-variant": "#bfcaba",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a",
+          "background": "#effcf9",
+          "on-background": "#121e1c"
+        },
+        fontFamily: {
+          "headline-xl": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "label-sm": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "subtext-bilingual": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+<!-- Unified Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
+  <div class="bg-surface-container-low border-b border-surface-container-high">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="offline-status-chip inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant font-label-sm text-[12px] text-on-surface-variant shadow-sm transition-colors">
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse network-status-dot"></span>
+          <span class="status-text font-medium" data-i18n="status_offline_ready">Offline Ready</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div aria-label="Text size adjustments" class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5" role="group">
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="sm" title="Small text" type="button">A-</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface bg-surface-container rounded-full transition-colors" data-text-size="md" title="Default text" type="button">A</button>
+          <button class="px-2 py-0.5 text-[12px] font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-text-size="lg" title="Large text" type="button">A+</button>
+        </div>
+
+        <div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5 shadow-sm" role="group" aria-label="Language selection">
+          <button type="button" data-lang-switch="en" class="lang-toggle-en px-2.5 py-0.5 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary" aria-pressed="true">EN</button>
+          <button type="button" data-lang-switch="hi" class="lang-toggle-hi px-2.5 py-0.5 rounded-full text-[12px] font-semibold text-on-surface-variant hover:text-on-surface transition-all" aria-pressed="false">हिं</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-20 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 min-w-0 flex-shrink-0 group">
+      <img alt="KRISHI Sahyog Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="assets/logo.svg"/>
+      <div class="flex flex-col">
+        <span class="font-headline-md text-[20px] font-bold tracking-tight text-primary leading-none" data-i18n="app_name">KRISHI Sahyog</span>
+        <span class="font-subtext-bilingual text-[11px] text-on-surface-variant leading-tight mt-0.5" data-i18n="app_subtext">Digital Farmer Companion Portal</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
+      <a href="index.html" data-path="home" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_home">Home</span>
+      </a>
+      <a href="schemes.html" data-path="schemes" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_schemes">Schemes</span>
+      </a>
+      <a href="weather.html" data-path="weather" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_weather">Weather</span>
+      </a>
+      <a href="check-scheme.html" data-path="check-scheme" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface">
+        <span data-i18n="nav_check_scheme">Check Scheme</span>
+      </a>
+      <a href="settings.html" data-path="settings" class="flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors bg-primary-container text-on-primary font-bold">
+        <span data-i18n="nav_settings">Offline & Settings</span>
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors shadow-sm font-label-md text-sm min-h-[44px]" href="tel:18001801551">
+        <span class="material-symbols-outlined text-[20px] text-tertiary">call</span>
+        <div class="flex flex-col text-left">
+          <span class="leading-none font-bold" data-i18n="helpline_phone">1800-180-1551</span>
+          <span class="text-[11px] leading-tight text-on-tertiary-fixed-variant" data-i18n="helpline_label">Toll-Free Helpline</span>
+        </div>
+      </a>
+      <a href="login.html" class="header-user-btn w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm" title="Login / Account">
+        <span class="material-symbols-outlined text-[20px]">person</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-32 bg-surface min-h-[calc(100vh-200px)]">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
+          <span class="material-symbols-outlined text-[16px]">offline_pin</span>
+          <span>DATA GUARANTEE • AUTO-CACHED FOR FIELD USE</span>
+        </div>
+        <h1 class="font-headline-xl text-2xl md:text-3xl font-extrabold text-on-surface" data-i18n="settings_title">
+          Offline Mode & App Settings
+        </h1>
+        <p class="text-xs md:text-sm text-on-surface-variant mt-1" data-i18n="settings_desc">
+          Manage your downloaded farm data, language preferences, voice assistance, and text sizing for low-network areas.
+        </p>
+      </div>
+
+      <!-- Live Network Simulation Pill -->
+      <div class="p-3.5 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+        <div class="text-xs">
+          <span class="font-bold text-on-surface block">Currently Online</span>
+          <span class="text-[11px] text-outline">All 54 schemes cached in memory</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Storage Manager & Network Optimizations Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
+
+      <!-- Left Column: Offline Storage Manager (8 cols) -->
+      <div class="lg:col-span-7 bg-surface-container-lowest p-6 md:p-8 rounded-3xl border border-outline-variant shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-[28px]">sd_card</span>
+              <h2 class="font-headline-md text-lg font-bold text-on-surface" data-i18n="settings_storage_title">Offline Storage Manager</h2>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-xs font-bold text-outline" data-i18n="settings_storage_budget">Budget Phone Optimized</span>
+          </div>
+
+          <!-- Memory Usage Bar -->
+          <div class="mb-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <div class="font-headline-xl text-3xl font-black text-on-surface">
+                3.4 MB <span class="text-xs font-medium text-outline" data-i18n="settings_storage_used">used of available phone memory</span>
+              </div>
+              <span class="text-xs font-bold text-primary">0.02% of Device</span>
+            </div>
+            <div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden flex">
+              <div class="h-full bg-primary" style="width: 53%;" title="Schemes: 1.8 MB"></div>
+              <div class="h-full bg-amber-500" style="width: 27%;" title="Weather: 0.9 MB"></div>
+              <div class="h-full bg-secondary" style="width: 20%;" title="Fake Scheme DB: 0.7 MB"></div>
+            </div>
+          </div>
+
+          <!-- Breakdown Cards -->
+          <div class="grid grid-cols-3 gap-3 mb-6">
+            <div class="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/60 text-center">
+              <span class="w-2 h-2 rounded-full bg-primary inline-block mb-1"></span>
+              <div class="font-bold text-sm text-on-surface">1.8 MB</div>
+              <span class="text-[11px] text-outline">54 Schemes</span>
+            </div>
+            <div class="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/60 text-center">
+              <span class="w-2 h-2 rounded-full bg-amber-500 inline-block mb-1"></span>
+              <div class="font-bold text-sm text-on-surface">0.9 MB</div>
+              <span class="text-[11px] text-outline">7-Day Weather</span>
+            </div>
+            <div class="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/60 text-center">
+              <span class="w-2 h-2 rounded-full bg-secondary inline-block mb-1"></span>
+              <div class="font-bold text-sm text-on-surface">0.7 MB</div>
+              <span class="text-[11px] text-outline">Fake Scheme DB</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between text-xs text-outline mb-4">
+            <span>Last synchronized: Today at 08:30 AM</span>
+            <span>Automatic CRC32 Integrity Checked</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onclick="alert('Downloaded latest schemes and weather updates into offline storage cache!')"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors shadow-sm min-h-[44px]"
+            >
+              <span class="material-symbols-outlined text-[18px]">sync</span>
+              <span data-i18n="settings_storage_update_btn">Update & Download Latest Schemes</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="if(confirm('Clear saved offline schemes? You can re-download them anytime.')) alert('Offline cache cleared successfully.');"
+              class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-surface-container border border-outline-variant text-error font-bold text-xs hover:bg-surface-container-high transition-colors min-h-[44px]"
+            >
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+              <span data-i18n="settings_storage_clear_btn">Clear Saved Data</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Network Optimizations (5 cols) -->
+      <div class="lg:col-span-5 bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant shadow-sm flex flex-col justify-between">
+        <div>
+          <h2 class="font-headline-md text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-[24px]">signal_cellular_alt</span>
+            <span>Network Optimizations</span>
+          </h2>
+
+          <div class="space-y-4 mb-6">
+            <label class="flex items-start gap-3 p-3 rounded-2xl bg-surface-container-low border border-outline-variant/60 cursor-pointer">
+              <input type="checkbox" checked class="mt-0.5 rounded text-primary focus:ring-primary w-4 h-4"/>
+              <div>
+                <span class="font-bold text-xs text-on-surface block">Strict Low-Bandwidth Mode (2G)</span>
+                <span class="text-[11px] text-on-surface-variant leading-tight block mt-0.5">Disable heavy photo assets over 2G cellular connections.</span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-2xl bg-surface-container-low border border-outline-variant/60 cursor-pointer">
+              <input type="checkbox" checked class="mt-0.5 rounded text-primary focus:ring-primary w-4 h-4"/>
+              <div>
+                <span class="font-bold text-xs text-on-surface block">Critical Weather Alert SMS</span>
+                <span class="text-[11px] text-on-surface-variant leading-tight block mt-0.5">Receive severe hailstorm and pest warning alerts via plain SMS when data is zero.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-surface-container border border-outline-variant">
+          <span class="text-xs text-outline font-semibold block mb-1">Weather Location Preset</span>
+          <div class="flex items-center justify-between">
+            <div class="font-bold text-sm text-on-surface">Wardha, Maharashtra</div>
+            <button type="button" onclick="alert('Default location set to Wardha, Maharashtra (PIN 442001)')" class="text-xs font-bold text-primary hover:underline">Change</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accessibility & Display Preferences Section -->
+    <div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl border border-outline-variant shadow-sm mb-10">
+      <div class="flex items-center justify-between gap-2 mb-6">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface">Accessibility & Display Preferences</h2>
+        <span class="text-xs font-bold text-tertiary bg-tertiary-fixed px-3 py-1 rounded-full">Voice-First Enabled</span>
+      </div>
+
+      <!-- Text Size Selection -->
+      <div class="mb-8">
+        <h3 class="font-label-lg text-sm font-bold text-on-surface mb-3" data-i18n="settings_text_size_title">
+          Text Size Selection
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button type="button" data-text-size="sm" class="text-size-choice-btn p-4 rounded-2xl bg-surface-container-low border-2 border-outline-variant text-left hover:border-primary transition-all">
+            <div class="text-lg font-bold text-on-surface mb-1">A (Small - 14px)</div>
+            <p class="text-xs text-on-surface-variant leading-snug">Best for high-resolution desktop monitors.</p>
+          </button>
+          <button type="button" data-text-size="md" class="text-size-choice-btn p-4 rounded-2xl bg-surface-container border-2 border-primary text-left transition-all">
+            <div class="text-xl font-bold text-primary mb-1">A (Medium - 16px) ✓</div>
+            <p class="text-xs text-on-surface-variant leading-snug">Recommended standard view for daily usage.</p>
+          </button>
+          <button type="button" data-text-size="lg" class="text-size-choice-btn p-4 rounded-2xl bg-surface-container-low border-2 border-outline-variant text-left hover:border-primary transition-all">
+            <div class="text-2xl font-bold text-on-surface mb-1">A+ (Large - 18px)</div>
+            <p class="text-xs text-on-surface-variant leading-snug">High legibility for elder farmers and outdoor sunlight.</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual Contrast Themes -->
+      <div class="mb-8">
+        <h3 class="font-label-lg text-sm font-bold text-on-surface mb-3" data-i18n="settings_theme_title">
+          Visual Contrast & Lighting Theme
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button type="button" id="btn-theme-sunlight" class="p-4 rounded-2xl bg-surface-container-low border-2 border-outline-variant hover:border-primary text-left flex items-start gap-3 transition-colors">
+            <span class="material-symbols-outlined text-primary text-[26px] mt-0.5">wb_sunny</span>
+            <div>
+              <div class="font-bold text-sm text-on-surface" data-i18n="settings_theme_sunlight">High Contrast Sunlight Mode</div>
+              <p class="text-xs text-on-surface-variant mt-0.5 leading-snug">Pure white background optimized for direct outdoor farm sunlight.</p>
+            </div>
+          </button>
+
+          <button type="button" id="btn-theme-night" class="p-4 rounded-2xl bg-surface-container-low border-2 border-outline-variant hover:border-primary text-left flex items-start gap-3 transition-colors">
+            <span class="material-symbols-outlined text-outline text-[26px] mt-0.5">bedtime</span>
+            <div>
+              <div class="font-bold text-sm text-on-surface" data-i18n="settings_theme_night">Soft Warm Night Mode</div>
+              <p class="text-xs text-on-surface-variant mt-0.5 leading-snug">Reduces eye fatigue during evening review in dark villages.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Voice Assistance Readout -->
+      <div>
+        <h3 class="font-label-lg text-sm font-bold text-on-surface mb-3" data-i18n="settings_voice_title">
+          Voice Assistance & Audio Readout
+        </h3>
+        <div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-tertiary text-[28px]">volume_up</span>
+            <div>
+              <div class="font-bold text-sm text-on-surface">Auto-read scheme details when opened</div>
+              <p class="text-xs text-on-surface-variant">Tapping any scheme card automatically starts voice reading in Hindi or English.</p>
+            </div>
+          </div>
+          <button type="button" class="btn-voice-read px-4 py-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs hover:bg-tertiary-fixed-dim transition-colors shadow-sm whitespace-nowrap" data-voice-text="This is a test of KRISHI Sahyog voice assistance. Audio reading is functional.">
+            Test Voice
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preferred Language Section -->
+    <div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl border border-outline-variant shadow-sm mb-10">
+      <div class="flex items-center justify-between gap-2 mb-4">
+        <h2 class="font-headline-md text-xl font-bold text-on-surface" data-i18n="settings_lang_title">
+          Preferred Language
+        </h2>
+        <span class="text-xs text-outline font-semibold">22 Indian Languages Supported</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <button type="button" data-lang-switch="en" class="p-4 rounded-2xl bg-surface-container border-2 border-outline-variant hover:border-primary text-center transition-all">
+          <div class="font-bold text-base text-on-surface">English</div>
+          <span class="text-xs text-outline mt-1 block">Default Script</span>
+        </button>
+        <button type="button" data-lang-switch="hi" class="p-4 rounded-2xl bg-surface-container border-2 border-outline-variant hover:border-primary text-center transition-all">
+          <div class="font-bold text-base text-on-surface">हिन्दी (Hindi)</div>
+          <span class="text-xs text-outline mt-1 block">देवनागरी लिपि</span>
+        </button>
+        <button type="button" onclick="alert('Marathi language pack is scheduled for next release.')" class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant text-center opacity-70">
+          <div class="font-bold text-base text-on-surface">मराठी</div>
+          <span class="text-xs text-outline mt-1 block">Coming Soon</span>
+        </button>
+        <button type="button" onclick="alert('Gujarati language pack is scheduled for next release.')" class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant text-center opacity-70">
+          <div class="font-bold text-base text-on-surface">ગુજરાતી</div>
+          <span class="text-xs text-outline mt-1 block">Coming Soon</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Unified Footer -->
+<footer class="w-full bg-surface-container border-t border-surface-container-high text-on-surface mt-16 mb-16 md:mb-0">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-6 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm flex items-start gap-4">
+        <div class="p-3 rounded-xl bg-tertiary-fixed text-tertiary flex-shrink-0">
+          <span class="material-symbols-outlined text-[28px]">support_agent</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-lg font-bold text-on-surface mb-1" data-i18n="footer_kcc_title">Kisan Call Centre Helpline</h3>
+          <a href="tel:18001801551" class="text-xl font-bold text-tertiary hover:underline block mb-1.5" data-i18n="helpline_phone">1800-180-1551</a>
+          <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="footer_kcc_time">
+            6:00 AM to 10:00 PM daily • Available across 22 regional Indian languages.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 flex flex-col gap-4">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center justify-between gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-error text-[24px] mt-0.5">report</span>
+            <div>
+              <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_report_fraud_title">Encountered a suspicious link or message?</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_report_fraud_desc">Report unauthorized agents or illegal fee collection cases directly.</p>
+            </div>
+          </div>
+          <a href="check-scheme.html" class="px-4 py-2 rounded-xl bg-error text-on-error text-xs font-bold whitespace-nowrap shadow-sm hover:opacity-90 transition-opacity" data-i18n="footer_report_fraud_btn">Report Fraud</a>
+        </div>
+
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant shadow-sm flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-[24px]">offline_pin</span>
+          <div>
+            <h4 class="font-label-lg text-sm font-bold text-on-surface" data-i18n="footer_offline_guarantee_title">Offline Guarantee</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5" data-i18n="footer_offline_guarantee_desc">All saved schemes and today's weather remain readable without an active internet connection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <p class="max-w-3xl leading-relaxed" data-i18n="footer_disclaimer">
+        Notice: KRISHI Sahyog is a non-profit farmer assistance companion. Information is aggregated directly from official Government portals (pmkisan.gov.in, agricoop.nic.in, mausam.imd.gov.in). We never ask for bank passwords, OTPs, or application processing fees.
+      </p>
+      <p class="whitespace-nowrap font-medium" data-i18n="footer_copyright">
+        © 2026 KRISHI Sahyog Digital Kisan Portal.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/98 backdrop-blur-md border-t border-surface-container-high shadow-[0_-2px_10px_rgba(0,0,0,0.06)] px-2 py-1 flex items-center justify-around" aria-label="Mobile Navigation">
+  <a href="index.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">home</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_home">Home</span>
+  </a>
+  <a href="schemes.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">format_list_bulleted</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_schemes">Schemes</span>
+  </a>
+  <a href="weather.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">partly_cloudy_day</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_weather">Weather</span>
+  </a>
+  <a href="check-scheme.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-on-surface-variant">
+    <span class="material-symbols-outlined text-[22px]">verified_user</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_check_scheme">Check Scheme</span>
+  </a>
+  <a href="settings.html" class="flex flex-col items-center py-1 px-2.5 rounded-lg transition-colors text-primary font-bold">
+    <span class="material-symbols-outlined text-[22px]">settings</span>
+    <span class="text-[10px] mt-0.5" data-i18n="nav_settings">Settings</span>
+  </a>
+</nav>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnSunlight = document.getElementById('btn-theme-sunlight');
+  const btnNight = document.getElementById('btn-theme-night');
+
+  btnSunlight.addEventListener('click', () => {
+    document.body.classList.remove('night-mode');
+    document.body.classList.toggle('sunlight-mode');
+  });
+
+  btnNight.addEventListener('click', () => {
+    document.body.classList.remove('sunlight-mode');
+    document.body.classList.toggle('night-mode');
+  });
+});
+</script>
+</body>
+</html>

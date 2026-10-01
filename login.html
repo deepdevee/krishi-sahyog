@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Login | KRISHI Sahyog</title>
+  <meta name="description" content="Login to KRISHI Sahyog to save agricultural schemes and receive localized weather alerts."/>
+  <meta name="theme-color" content="#0d631b"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/tailwind.js"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#0d631b",
+          "primary-container": "#2e7d32",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#cbffc2",
+          "secondary": "#79564b",
+          "secondary-container": "#fed0c1",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#79574c",
+          "tertiary": "#774c00",
+          "tertiary-container": "#986200",
+          "tertiary-fixed": "#ffddb5",
+          "tertiary-fixed-dim": "#ffb957",
+          "surface": "#effcf9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#e9f7f3",
+          "surface-container": "#e3f1ed",
+          "surface-container-high": "#ddebe8",
+          "surface-dim": "#cfddd9",
+          "on-surface": "#121e1c",
+          "on-surface-variant": "#40493d",
+          "outline": "#707a6c",
+          "outline-variant": "#bfcaba",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a"
+        },
+        fontFamily: {
+          "headline-xl": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "headline-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-lg": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"],
+          "body-md": ["Noto Sans", "Noto Sans Devanagari", "sans-serif"]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between p-4 sm:p-6">
+
+  <!-- Auth Header -->
+  <header class="max-w-[480px] w-full mx-auto flex items-center justify-between py-3 mb-2">
+    <a href="index.html" class="p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface flex items-center justify-center" title="Back to Home">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+
+    <h1 class="font-headline-md text-lg font-bold text-on-surface" data-i18n="login_title">Login</h1>
+
+    <div class="flex items-center gap-2">
+      <!-- Language Switcher -->
+      <div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5 shadow-sm">
+        <button type="button" data-lang-switch="en" class="lang-toggle-en px-2 py-0.5 rounded-full text-[11px] font-bold transition-all bg-primary text-on-primary">EN</button>
+        <button type="button" data-lang-switch="hi" class="lang-toggle-hi px-2 py-0.5 rounded-full text-[11px] font-semibold text-on-surface-variant hover:text-on-surface transition-all">हिं</button>
+      </div>
+
+      <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline">
+        <span class="material-symbols-outlined text-[18px]">account_circle</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Main Card -->
+  <main class="max-w-[480px] w-full mx-auto bg-surface-container-lowest rounded-3xl border border-outline-variant p-6 shadow-md my-auto">
+    <!-- Illustration / Graphic Banner -->
+    <div class="relative rounded-2xl overflow-hidden mb-6 h-36 border border-outline-variant shadow-sm">
+      <img src="assets/login-landscape.jpg" alt="Farming Landscape" class="w-full h-full object-cover"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+        <span class="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full">
+          <span class="material-symbols-outlined text-primary-fixed text-[14px]">verified</span>
+          Official Farmer Portal
+        </span>
+      </div>
+    </div>
+
+    <div class="text-center mb-6">
+      <h2 class="font-headline-md text-xl md:text-2xl font-bold text-on-surface mb-1.5" data-i18n="login_welcome">
+        Welcome to KRISHI Sahyog
+      </h2>
+      <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed" data-i18n="login_subtitle">
+        Login to save your schemes and get weather alerts for your village.
+      </p>
+    </div>
+
+    <!-- Low / No Internet Notice -->
+    <div class="p-3.5 rounded-2xl bg-secondary-container/40 border border-secondary/30 flex items-start gap-3 mb-6">
+      <span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">wifi_off</span>
+      <div>
+        <h4 class="font-bold text-xs text-on-secondary-container" data-i18n="login_offline_notice_title">Low or No Internet?</h4>
+        <p class="text-[11px] text-on-secondary-container/90 leading-tight mt-0.5" data-i18n="login_offline_notice_desc">
+          OTP needs a network. You can continue as guest and use saved schemes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="space-y-4">
+      <div>
+        <div class="flex items-center justify-between mb-1.5">
+          <label for="login-phone-input" class="font-label-md text-xs font-bold text-on-surface" data-i18n="login_mobile_label">
+            Mobile Number
+          </label>
+          <span class="text-[11px] text-outline" data-i18n="login_mobile_digits">10 digits</span>
+        </div>
+
+        <div class="flex items-center rounded-2xl bg-surface-container-low border-2 border-outline-variant focus-within:border-primary overflow-hidden transition-colors">
+          <span class="px-3.5 py-3 text-sm font-bold text-on-surface bg-surface-container border-r border-outline-variant">
+            +91
+          </span>
+          <input
+            id="login-phone-input"
+            type="tel"
+            maxlength="10"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            class="w-full px-3.5 py-3 text-base text-on-surface placeholder:text-outline bg-transparent focus:outline-none"
+            data-i18n-placeholder="login_mobile_placeholder"
+            placeholder="Enter 10-digit mobile number"
+            required
+          />
+          <button type="button" class="btn-voice-read px-3 text-outline hover:text-primary transition-colors" data-voice-text="Please enter your 10 digit mobile number to receive OTP.">
+            <span class="material-symbols-outlined text-[20px]">mic</span>
+          </button>
+        </div>
+
+        <p id="login-error-msg" class="text-xs text-error mt-1.5 hidden flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">error</span>
+          <span>Please enter a valid 10-digit Indian mobile number (e.g. 9876543210).</span>
+        </p>
+      </div>
+
+      <button
+        type="submit"
+        id="btn-send-otp"
+        class="w-full py-3.5 px-4 rounded-2xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center gap-2 min-h-[48px]"
+      >
+        <span class="material-symbols-outlined text-[18px]">sms</span>
+        <span data-i18n="login_send_otp_btn">Send OTP</span>
+      </button>
+    </form>
+
+    <!-- Divider -->
+    <div class="relative my-6 text-center">
+      <div class="absolute inset-0 flex items-center">
+        <div class="w-full border-t border-surface-container-high"></div>
+      </div>
+      <span class="relative px-3 bg-surface-container-lowest text-xs text-outline font-bold uppercase tracking-wider" data-i18n="login_or">OR</span>
+    </div>
+
+    <!-- Guest Mode Button -->
+    <a
+      href="index.html"
+      class="w-full py-3 px-4 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-colors font-bold text-xs text-on-surface flex items-center justify-center gap-2 min-h-[44px]"
+    >
+      <span class="material-symbols-outlined text-[18px]">person_outline</span>
+      <span data-i18n="login_guest_btn">Continue as guest</span>
+    </a>
+    <p class="text-[11px] text-center text-outline mt-2 leading-tight" data-i18n="login_guest_hint">
+      You can search schemes and check weather without logging in.
+    </p>
+
+    <!-- New User Prompt -->
+    <div class="text-center mt-6 pt-4 border-t border-surface-container-high text-xs text-on-surface-variant">
+      <span data-i18n="login_new_user">New here?</span>
+      <a href="#" onclick="alert('Account creation is automatic when you login with your phone number.')" class="font-bold text-primary hover:underline ml-1" data-i18n="login_create_acc">Create account</a>
+    </div>
+
+    <!-- Security Guarantee Badge -->
+    <div class="mt-6 p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/60 flex items-start gap-3">
+      <span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">verified_user</span>
+      <div>
+        <h4 class="font-bold text-xs text-on-surface" data-i18n="login_security_title">Safe & Secure Verification</h4>
+        <p class="text-[11px] text-on-surface-variant leading-tight mt-0.5" data-i18n="login_security_desc">
+          We will never ask for your bank details, Aadhaar number or any money.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Auth Footer -->
+  <footer class="max-w-[480px] w-full mx-auto text-center py-4 text-xs text-outline space-y-2">
+    <a href="tel:18001801551" class="inline-flex items-center gap-1.5 font-bold text-tertiary hover:underline">
+      <span class="material-symbols-outlined text-[16px]">call</span>
+      <span>Kisan Helpline 1800-180-1551</span>
+    </a>
+    <div class="flex items-center justify-center gap-4 text-[11px]">
+      <a href="#" class="hover:underline">Terms of Service</a>
+      <span>•</span>
+      <a href="#" class="hover:underline">Privacy Policy</a>
+    </div>
+  </footer>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('login-form');
+  const phoneInput = document.getElementById('login-phone-input');
+  const errorMsg = document.getElementById('login-error-msg');
+
+  // Phone input formatting (digits only)
+  phoneInput.addEventListener('input', (e) => {
+    phoneInput.value = phoneInput.value.replace(/\\D/g, '');
+    if (errorMsg) errorMsg.classList.add('hidden');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const phone = phoneInput.value.trim();
+
+    // Validate 10-digit Indian phone number (starts with 6, 7, 8, 9)
+    const phoneRegex = /^[6-9]\\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      if (errorMsg) errorMsg.classList.remove('hidden');
+      phoneInput.focus();
+      return;
+    }
+
+    // Store phone in session storage for otp.html display
+    sessionStorage.setItem('krishi_otp_phone', `+91 ${phone}`);
+
+    /**
+     * TODO: Send OTP Backend API Integration
+     * Replace mock flow below with real SMS gateway:
+     * await fetch('/api/auth/send-otp', { method: 'POST', body: JSON.stringify({ phone }) });
+     */
+    window.location.href = 'otp.html';
+  });
+});
+</script>
+</body>
+</html>

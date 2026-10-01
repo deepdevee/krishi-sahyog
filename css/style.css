@@ -1,0 +1,179 @@
+/* KRISHI Sahyog - Agricultural Farmer Platform CSS */
+
+/* 1. Offline Local Fonts */
+@import url('fonts/fonts.css');
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('fonts/material-symbols.woff2') format('woff2');
+}
+
+/* Online Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+:root {
+  --color-primary: #0d631b;
+  --color-primary-container: #2e7d32;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #cbffc2;
+  --color-secondary: #79564b;
+  --color-secondary-container: #fed0c1;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #79574c;
+  --color-tertiary: #774c00;
+  --color-tertiary-container: #986200;
+  --color-tertiary-fixed: #ffddb5;
+  --color-tertiary-fixed-dim: #ffb957;
+  --color-surface: #effcf9;
+  --color-surface-container: #e3f1ed;
+  --color-surface-container-low: #e9f7f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #ddebe8;
+  --color-on-surface: #121e1c;
+  --color-on-surface-variant: #40493d;
+  --color-outline: #707a6c;
+  --color-outline-variant: #bfcaba;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+}
+
+/* Base resets & typography */
+html {
+  font-family: 'Noto Sans', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html[lang="hi"] {
+  font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, -apple-system, sans-serif !important;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Material Symbols Outlined Icon styling */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.fill-1 {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Text Size Adjustments */
+html.text-size-sm {
+  font-size: 14px;
+}
+html.text-size-md {
+  font-size: 16px;
+}
+html.text-size-lg {
+  font-size: 18px;
+}
+
+/* High Contrast Sunlight Mode */
+body.sunlight-mode {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+body.sunlight-mode .bg-surface,
+body.sunlight-mode .bg-surface-container-low,
+body.sunlight-mode .bg-surface-container {
+  background-color: #f4f6f4 !important;
+}
+body.sunlight-mode .text-on-surface-variant {
+  color: #111111 !important;
+}
+body.sunlight-mode .border-outline-variant {
+  border-color: #333333 !important;
+}
+
+/* Soft Warm Night Mode */
+body.night-mode {
+  background-color: #1a2421 !important;
+  color: #e6f4f0 !important;
+}
+body.night-mode header,
+body.night-mode .bg-surface-container-lowest {
+  background-color: #24302d !important;
+  color: #e6f4f0 !important;
+}
+body.night-mode .bg-surface,
+body.night-mode .bg-surface-container-low {
+  background-color: #1a2421 !important;
+}
+body.night-mode .bg-surface-container {
+  background-color: #2b3935 !important;
+}
+body.night-mode .text-on-surface {
+  color: #f1fbf8 !important;
+}
+body.night-mode .text-on-surface-variant {
+  color: #c0cec9 !important;
+}
+body.night-mode .border-outline-variant,
+body.night-mode .border-surface-container-high {
+  border-color: #3e4f4a !important;
+}
+
+/* Touch targets & accessibility */
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid #2e7d32;
+  outline-offset: 2px;
+}
+
+/* Audio pulse animation */
+@keyframes audioPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.playing-audio {
+  animation: audioPulse 1.2s infinite ease-in-out;
+}
+
+/* PWA App Banner */
+#pwa-install-banner {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Print styling */
+@media print {
+  header, footer, .mobile-bottom-nav, .no-print {
+    display: none !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+}
