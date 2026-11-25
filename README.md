@@ -40,30 +40,61 @@ All 14 Google Stitch design export folders have been consolidated into 9 modular
 
 ---
 
-## 3. How to Run Locally
+## 3. How to View the Full Website
 
-Because this project is built with vanilla web standards and relies on `fetch()` to load local JSON files (`data/schemes.json`, `data/weather.json`, `lang/*.json`), it must be served via any local HTTP server (browsers block `file://` fetch requests due to CORS security policies).
+### Option A: Online via GitHub Pages (Instant)
+The complete live platform is accessible at:
+> 🌐 **[https://deepdevee.github.io/krishi-sahyog/](https://deepdevee.github.io/krishi-sahyog/)**
 
-### Option A: Using Python 3 (Built-in, Recommended)
+### Option B: 1-Click Launch on Windows (Local)
+Double-click the **`start-server.bat`** file in the root folder. It starts a lightweight Python server and automatically launches the platform at `http://localhost:8000` in your default browser.
+
+### Option C: Using Python Command Line
 ```bash
-# Navigate to the frontend directory
-cd krishi-sahyog-frontend
-
-# Start the server on port 8000
-python -m http.server 8000
+# Start server serving the frontend directory
+python -m http.server -d frontend 8000
 ```
-Open your browser and navigate to: **`http://localhost:8000`**
+Then open: **`http://localhost:8000`**
 
-### Option B: Using Node.js / npx
+### Option D: Using Node.js / npx
 ```bash
-cd krishi-sahyog-frontend
+cd frontend
 npx serve .
 # Or: npx http-server -p 8000
 ```
 
-### Option C: Using VS Code Live Server
-1. Install the "Live Server" extension in VS Code.
-2. Right-click `index.html` and select **"Open with Live Server"**.
+---
+
+## 4. Repository Structure
+
+```
+krishi-sahyog/
+├── frontend/               # Full web application (HTML, CSS, JS, JSON data, PWA assets)
+│   ├── assets/             # Logos, hero images, and PWA icons
+│   ├── css/                # Typography rules and material icons
+│   ├── data/               # schemes.json and weather.json datasets
+│   ├── js/                 # Modular scripts (schemes, weather, lang, app shell)
+│   ├── lang/               # en.json and hi.json localization dictionaries
+│   ├── index.html          # Dashboard home page
+│   ├── schemes.html        # Scheme directory & filter search
+│   ├── scheme-detail.html  # Dynamic scheme guidance & documents checklist
+│   ├── weather.html        # Weather intelligence & crop advisories
+│   ├── check-scheme.html   # Scam detector & link validator
+│   ├── login.html          # Farmer mobile phone authentication
+│   ├── otp.html            # OTP verification with timer
+│   ├── settings.html       # Offline cache management & display modes
+│   ├── language.html       # First-time language selector
+│   ├── manifest.json       # PWA manifest
+│   └── service-worker.js   # Offline cache service worker
+├── designs/                # UI design sprint archive & screenshots
+│   ├── screenshots/        # High-resolution screenshots of all pages
+│   └── stitch-exports/     # 14 raw Google Stitch export folders
+├── scripts/                # Utility & automated test scripts
+│   └── audit_check.py      # Language parity and asset integrity checker
+├── .github/                # GitHub Actions automated deployment workflows
+├── start-server.bat        # 1-click local development launcher
+└── README.md
+```
 
 ---
 

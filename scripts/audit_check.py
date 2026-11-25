@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from html.parser import HTMLParser
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent / "frontend"
 
 class LinkAndI18nParser(HTMLParser):
     def __init__(self, filename):
