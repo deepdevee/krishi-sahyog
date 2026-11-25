@@ -20,6 +20,14 @@ const ASSETS_TO_CACHE = [
   './css/style.css',
   './css/fonts/fonts.css',
   './css/fonts/material-symbols.woff2',
+  './css/fonts/font_0.woff2',
+  './css/fonts/font_1.woff2',
+  './css/fonts/font_2.woff2',
+  './css/fonts/font_3.woff2',
+  './css/fonts/font_4.woff2',
+  './css/fonts/font_5.woff2',
+  './css/fonts/font_6.woff2',
+  './css/fonts/font_7.woff2',
   './js/tailwind.js',
   './js/app.js',
   './js/language.js',
@@ -35,7 +43,11 @@ const ASSETS_TO_CACHE = [
   './assets/farmer-verified.jpg',
   './assets/csc-center.jpg',
   './assets/login-landscape.jpg',
-  './assets/scheme-detail-hero.jpg'
+  './assets/scheme-detail-hero.jpg',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
+  './assets/icons/favicon.png',
+  './assets/icons/favicon.svg'
 ];
 
 self.addEventListener('install', (event) => {

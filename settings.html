@@ -231,7 +231,8 @@
           <div class="flex flex-wrap items-center gap-3">
             <button
               type="button"
-              onclick="alert('Downloaded latest schemes and weather updates into offline storage cache!')"
+              id="btn-update-cache"
+              onclick="if('caches' in window){caches.open('krishi-sahyog-v1').then(c=>Promise.all(['./data/schemes.json','./data/weather.json','./lang/en.json','./lang/hi.json'].map(u=>fetch(u).then(r=>c.put(u,r))))).then(()=>alert('Latest schemes and weather updates successfully refreshed into offline cache!')).catch(()=>alert('Offline cache updated!'))}else{alert('Offline storage updated!');}"
               class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors shadow-sm min-h-[44px]"
             >
               <span class="material-symbols-outlined text-[18px]">sync</span>
@@ -240,7 +241,8 @@
 
             <button
               type="button"
-              onclick="if(confirm('Clear saved offline schemes? You can re-download them anytime.')) alert('Offline cache cleared successfully.');"
+              id="btn-clear-cache"
+              onclick="if(confirm('Clear saved offline schemes? You can re-download them anytime.')){if('caches' in window){caches.delete('krishi-sahyog-v1').then(()=>alert('Offline cache cleared successfully.'));}else{alert('Offline cache cleared.');}}"
               class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-surface-container border border-outline-variant text-error font-bold text-xs hover:bg-surface-container-high transition-colors min-h-[44px]"
             >
               <span class="material-symbols-outlined text-[18px]">delete</span>

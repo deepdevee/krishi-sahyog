@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary":"#ffffff","outline":"#707a6c","error-container":"#ffdad6","primary-fixed-dim":"#88d982","primary-fixed":"#a3f69c","surface-tint":"#1b6d24","on-tertiary":"#ffffff","on-tertiary-container":"#ffeede","on-secondary-fixed-variant":"#5e3f35","surface-container-low":"#e9f7f3","surface-container-high":"#ddebe8","surface-dim":"#cfddd9","primary-container":"#2e7d32","on-primary-fixed":"#002204","secondary":"#79564b","on-primary-container":"#cbffc2","tertiary-fixed-dim":"#ffb957","on-secondary-fixed":"#2d150d","on-surface-variant":"#40493d","surface-bright":"#effcf9","on-primary-fixed-variant":"#005312","inverse-on-surface":"#e6f4f0","primary":"#0d631b","surface-variant":"#d8e5e2","surface-container":"#e3f1ed","surface-container-lowest":"#ffffff","secondary-fixed-dim":"#e9bdae","error":"#ba1a1a","on-background":"#121e1c","outline-variant":"#bfcaba","tertiary-container":"#986200","on-secondary-container":"#79574c","tertiary":"#774c00","inverse-primary":"#88d982","on-error":"#ffffff","on-error-container":"#93000a","surface-container-highest":"#d8e5e2","background":"#effcf9","secondary-container":"#fed0c1","surface":"#effcf9","on-surface":"#121e1c","tertiary-fixed":"#ffddb5","secondary-fixed":"#ffdbcf","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#643f00","on-tertiary-fixed":"#2a1800","inverse-surface":"#273331"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","gutter-tablet":"1.25rem","margin":"1rem","space-xl":"2.25rem","margin-desktop":"2.5rem","space-xs":"0.375rem","space-sm":"0.625rem","margin-tablet":"1.5rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-md":"1rem"},"fontFamily":{"headline-xl":["Noto Sans"],"body-lg":["Noto Sans"],"label-md":["Noto Sans"],"subtext-bilingual":["Noto Sans"],"headline-xl-mobile":["Noto Sans"],"label-lg":["Noto Sans"],"headline-lg-mobile":["Noto Sans"],"label-sm":["Noto Sans"],"body-md":["Noto Sans"],"headline-md":["Noto Sans"],"headline-lg":["Noto Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"48px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"700"}],"subtext-bilingual":["14px",{"lineHeight":"22px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"38px","fontWeight":"700"}],"label-lg":["16px",{"lineHeight":"24px","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"32px","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"18px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"30px","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"38px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="bg-surface-container-low border-b border-surface-container-high"><div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2"><div class="flex items-center gap-2"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant font-label-sm text-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span>Offline Ready / इंटरनेट के बिना भी उपलब्ध</span></span></div><div class="flex items-center gap-3"><div aria-label="Text size adjustments" class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5" role="group"><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" title="Decrease text size" type="button">A-</button><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface bg-surface-container rounded-full transition-colors" title="Default text size" type="button">A</button><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" title="Increase text size" type="button">A+</button></div><div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5"><button class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary text-on-primary transition-colors" type="button">English</button><button class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors" type="button">हिन्दी</button></div></div></div></div><div class="h-20 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-3 min-w-0 flex-shrink-0"><img alt="KRISHI Sahyog Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPS2FYwAmm_Gu0tH6cQTa0pqoW5IK18SArqney2YTO58MK87zpN5jpr4nFima-r4F48s6WUOkbVHU5u1Kq-rmm1eZiFAXnlUocMPvx7sPbgxrzdohTQh5XYwbcuj-D4TTIBx_4gy3f4F0KuWWnEePz3VG-NKr4oq6TrHYVP2qnVNY1euX61gZe9sR3aaFPzLngj7LDWlfhkPyjE36lj-iPEe4ot9RAHvulfcDxyN3JGBObMLebRnMyiN11"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-primary leading-none">KRISHI Sahyog</span><span class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant text-[11px] leading-tight">कृषि सहयोग • किसान सेवा पोर्टल</span></div></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-primary-container text-on-primary font-bold"><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="home" href="#"><span class="font-label-md text-label-md leading-none">Home</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">मुख्य पृष्ठ</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="schemes" href="#"><span class="font-label-md text-label-md leading-none">Schemes</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">सरकारी योजनाएं</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="weather" href="#"><span class="font-label-md text-label-md leading-none">Weather</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">मौसम पूर्वानुमान</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="check-scheme" href="#"><span class="font-label-md text-label-md leading-none">Check Scheme</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">असली या नकली</span></a><a aria-current="page" class="flex flex-col px-3 py-2 rounded-lg transition-colors bg-primary-container text-on-primary font-bold" data-path="offline-and-settings" href="#"><span class="font-label-md text-label-md leading-none">Offline &amp; Settings</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">ऑफ़लाइन डेटा</span></a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors shadow-sm font-label-md text-label-md min-h-[48px]" href="tel:18001801551"><span class="material-symbols-outlined text-[20px] text-tertiary">call</span><div class="flex flex-col text-left"><span class="leading-none font-bold">1800-180-1551</span><span class="text-[11px] leading-tight text-on-tertiary-fixed-variant">Toll-Free / मुफ़्त सलाह</span></div></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-32 bg-surface min-h-[calc(100vh-200px)]"><div class="flex flex-col w-full">
+<div class="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+<!-- Top Status Banner & Page Context -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-sm">
+<div class="absolute -right-12 -top-12 w-72 h-72 rounded-full bg-primary-fixed/30 pointer-events-none blur-3xl"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<div class="space-y-2 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">offline_pin</span>
+              DATA GUARANTEE
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Auto-Cached for Field Use</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+            Offline Mode &amp; App Settings
+          </h1>
+<p class="font-headline-md text-headline-md text-primary font-bold">
+            ऑफ़लाइन डेटा व सेटिंग्स
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant pt-1">
+            Manage your downloaded farm data, language preferences, voice assistance, and text sizing for low-network areas.
+          </p>
+</div>
+<!-- Live Network & Simulation Switch Card -->
+<div class="w-full lg:w-96 flex-shrink-0 bg-surface-container-low rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Network Status</span>
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all duration-300" id="networkPill">
+<span class="w-2.5 h-2.5 rounded-full bg-on-primary-container animate-pulse" id="networkDot"></span>
+<span id="networkText">Currently Online (कनेक्टेड)</span>
+</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Simulate Offline Mode</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">बिना इंटरनेट चलाकर देखें</span>
+</div>
+<button aria-pressed="false" class="relative inline-flex h-8 w-14 items-center rounded-full bg-surface-variant transition-colors focus:outline-none" id="offlineToggleBtn" type="button">
+<span class="inline-block h-6 w-6 transform rounded-full bg-surface-container-lowest shadow-md transition-transform translate-x-1" id="toggleKnob"></span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-semibold mt-2.5 flex items-center gap-1.5" id="toggleHint">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>All 54 schemes fully loaded in device memory.</span>
+</p>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">offline_bolt</span>
+<span>Everything saved here works without mobile data, SIM network, or Wi-Fi in remote crop fields.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Section: Storage Manager & Data Saver -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Column Left: Storage Manager (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-6 lg:p-7 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">sd_card</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Offline Storage Manager</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">फ़ोन स्टोरेज व ऑफ़लाइन डेटा प्रबंधन</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+            Budget Phone Optimized
+          </span>
+</div>
+<!-- Space Meter & Breakdown -->
+<div class="bg-surface-container-low p-5 rounded-xl space-y-4">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-headline-xl text-headline-xl font-bold text-primary">3.4 MB</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-2">used of available phone memory</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary-container px-2 py-0.5 rounded bg-primary-fixed">0.02% of Device</span>
+</div>
+<!-- Multi-colored segment progress bar -->
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden flex shadow-inner">
+<div class="h-full bg-primary" style="width: 53%;" title="Govt Schemes (1.8 MB)"></div>
+<div class="h-full bg-tertiary-container" style="width: 26%;" title="Weather &amp; Advisory (0.9 MB)"></div>
+<div class="h-full bg-secondary" style="width: 21%;" title="Verification DB (0.7 MB)"></div>
+</div>
+<!-- Legend metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+<div class="p-3 bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">54 Schemes</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">1.8 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">कृषि योजनाएं</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">7-Day Weather</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">0.9 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">मौसम व सलाह</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Fake Scheme DB</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">0.7 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">धोखाधड़ी जांच डेटा</span>
+</div>
+</div>
+</div>
+<!-- Sync Actions -->
+<div class="space-y-4">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+<span>Last synchronized: <strong class="text-on-surface font-bold" id="syncTimestamp">Today at 06:15 AM</strong></span>
+</div>
+<span class="text-secondary font-medium">Automatic CRC32 Integrity Checked</span>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch gap-3">
+<button class="flex-1 min-h-[56px] px-5 py-3 rounded-lg bg-primary text-on-primary hover:bg-surface-tint active:bg-primary-container shadow-md transition-all flex items-center justify-center gap-3" id="updateNowBtn" type="button">
+<span class="material-symbols-outlined text-[24px]" id="syncIcon">sync</span>
+<div class="flex flex-col text-left">
+<span class="font-label-lg text-label-lg leading-tight">Update &amp; Download Latest Schemes</span>
+<span class="font-subtext-bilingual text-subtext-bilingual text-on-primary/90 text-[12px] leading-tight">ताज़ा डेटा अभी डाउनलोड करें</span>
+</div>
+</button>
+<button class="min-h-[56px] px-4 py-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-error active:bg-error-container/30 transition-all flex items-center justify-center gap-2" id="clearDataBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">delete_sweep</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Clear Saved Data</span>
+<span class="font-label-sm text-label-sm leading-tight text-error/80">डेटा हटाएं</span>
+</div>
+</button>
+</div>
+<!-- Auto sync toggle row -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">wifi</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Auto-sync on reliable connections</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Automatically update whenever phone connects to Wi-Fi / Strong 4G</span>
+</div>
+</div>
+<input checked="" class="w-6 h-6 rounded accent-primary cursor-pointer" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Column Right: Low Bandwidth & Region Presets (5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Low-Bandwidth Optimizations -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Network Optimizations</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">कम नेटवर्क / 2G गति के अनुकूल</p>
+</div>
+</div>
+<div class="space-y-3">
+<label class="flex items-start justify-between gap-3 p-3.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">hide_image</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Strict Low-Bandwidth Mode</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Disable heavy photo assets and complex maps over 2G networks.</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary mt-1" type="checkbox"/>
+</label>
+<label class="flex items-start justify-between gap-3 p-3.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">sms</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">SMS Critical Alerts</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Receive severe hailstorm and pest warning alerts via plain SMS when data is zero.</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary mt-1" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Location Preset & Agricultural Zone -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[24px]">pin_drop</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Weather Location Preset</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">IMD Station 42809</span>
+</div>
+<div class="p-4 bg-surface-container rounded-xl flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Wardha, Maharashtra</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vidarbha Agro-Climatic Subzone • PIN 442001</span>
+</div>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-lowest text-secondary font-label-md text-label-md font-bold shadow-sm hover:bg-surface-container-high transition-colors" id="changeLocBtn" type="button">
+              Change
+            </button>
+</div>
+<!-- District Selection Modal / Input Simulation (Hidden by default, toggleable) -->
+<div class="hidden p-3.5 bg-surface-container-low rounded-lg space-y-2" id="districtSelector">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Enter 6-digit Pincode or District Name:</span>
+<div class="flex gap-2">
+<input class="flex-1 px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" id="pincodeInput" placeholder="e.g. 442001 or Nashik" type="text"/>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md" id="saveLocBtn" type="button">Save</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accessibility, Display & Audio Preferences Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-sm space-y-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-surface-container-high">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Accessibility &amp; Display Preferences</h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">दृष्टि एवं आवाज अनुकूलन (वरिष्ठ किसान सहायता)</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+            Voice-First Enabled
+          </span>
+</div>
+</div>
+<!-- Text Sizing Visual Selector -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">format_size</span>
+            Text Size Selection (अक्षर का आकार चुनें)
+          </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Affects all portals &amp; scheme descriptions</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="textSizeGroup">
+<!-- Small -->
+<button class="text-size-btn text-left p-5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between h-40" data-size="small" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">A</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container text-on-surface-variant">Compact (16px)</span>
+</div>
+<div>
+<p class="text-[14px] leading-relaxed text-on-surface line-clamp-2">
+                प्रधानमंत्री किसान सम्मान निधि योजना के तहत वार्षिक सहायता।
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">Best for large tablet screens</span>
+</div>
+</button>
+<!-- Medium (Active Recommended) -->
+<button class="text-size-btn active-size text-left p-5 rounded-xl bg-primary-fixed text-on-primary-fixed transition-all flex flex-col justify-between h-40 shadow-sm relative" data-size="medium" type="button">
+<span class="absolute top-3 right-3 flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> RECOMMENDED
+            </span>
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">A</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-on-primary-fixed-variant/10 text-on-primary-fixed">Medium (18px)</span>
+</div>
+<div>
+<p class="text-[16px] font-semibold text-on-primary-fixed line-clamp-2">
+                प्रधानमंत्री किसान सम्मान निधि योजना के तहत वार्षिक सहायता।
+              </p>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant mt-1 block font-medium">Standard clear view for daily usage</span>
+</div>
+</button>
+<!-- Large (Elder Farmers) -->
+<button class="text-size-btn text-left p-5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between h-40" data-size="large" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">A+</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container text-on-surface-variant">Large (22px)</span>
+</div>
+<div>
+<p class="text-[18px] font-bold text-on-surface line-clamp-2">
+                प्रधानमंत्री किसान सम्मान निधि सहायता।
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">High legibility for elder farmers (बड़ा फ़ॉन्ट)</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Visual Contrast & Lighting Mode -->
+<div class="space-y-4 pt-2">
+<label class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">brightness_medium</span>
+          Visual Contrast &amp; Lighting Theme (धूप और प्रकाश मोड)
+        </label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="cursor-pointer p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">wb_sunny</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">High Contrast Sunlight Mode</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optimized for direct outdoor sunlight in farm fields (खेतों में धूप के लिए उत्तम).</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" name="contrastMode" type="radio"/>
+</label>
+<label class="cursor-pointer p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">nightlight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Soft Warm Night Mode</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reduces eye fatigue during evening review in dark villages (रात के समय राहत).</span>
+</div>
+</div>
+<input class="w-5 h-5 accent-primary cursor-pointer" name="contrastMode" type="radio"/>
+</label>
+</div>
+</div>
+<!-- Voice Assistance (Text-to-Speech) Settings -->
+<div class="space-y-4 pt-2">
+<label class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">volume_up</span>
+          Voice Assistance &amp; Audio Readout (बोलकर सुनाएं सेटिंग्स)
+        </label>
+<div class="p-5 rounded-xl bg-tertiary-fixed/30 space-y-5">
+<!-- Master speech toggle -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">hearing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Auto-read scheme details when opened</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tapping any scheme card automatically starts voice reading in Hindi or local language.</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="min-h-[48px] px-4 py-2 rounded-lg bg-tertiary-container text-on-tertiary-container font-label-md text-label-md font-bold flex items-center gap-2 hover:bg-tertiary transition-colors shadow-sm" id="testAudioBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span>Test Voice (आवाज सुनें)</span>
+</button>
+<input checked="" class="w-6 h-6 rounded accent-tertiary cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<!-- Speech Speed & Regional Accents -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Speed -->
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-on-surface">Voice Narration Speed (गति)</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-bold shadow-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">slow_motion_video</span>
+<span>Slow &amp; Clear (धीमी)</span>
+</button>
+<button class="px-3 py-2.5 rounded-lg bg-tertiary text-on-tertiary font-label-sm text-label-sm font-bold shadow-sm flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Normal Speed (सामान्य)</span>
+</button>
+</div>
+</div>
+<!-- Regional Accent Selector -->
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-on-surface">Regional Pronunciation Accent (क्षेत्रीय उच्चारण)</span>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-tertiary cursor-pointer">
+<option selected="">Hindi — Northern &amp; Central India (उत्तर एवं मध्य भारत)</option>
+<option>Marathi — Vidarbha &amp; Marathwada</option>
+<option>Gujarati — Saurashtra &amp; North Gujarat</option>
+<option>Telugu — Telangana &amp; Rayalaseema</option>
+<option>Bengali — Gangetic Plain dialect</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Language & Region Selection Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Preferred Language (भाषा का चयन)</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">All official documents &amp; voice translations adapt to this selection.</p>
+</div>
+<span class="px-3 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-bold">
+          22 Languages Supported
+        </span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="langSelectorGrid">
+<!-- English -->
+<button class="lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center" type="button">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">English</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Default Script</span>
+</button>
+<!-- Hindi (Selected) -->
+<button class="lang-card p-4 rounded-xl bg-primary text-on-primary shadow-md transition-all flex flex-col items-center justify-center gap-1 text-center relative" type="button">
+<span class="absolute top-2 right-2 material-symbols-outlined text-[16px] text-on-primary">check_circle</span>
+<span class="font-headline-md text-headline-md font-bold">हिन्दी</span>
+<span class="font-label-sm text-label-sm text-on-primary/80">Hindi (Selected)</span>
+</button>
+<!-- Marathi -->
+<button class="lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center" type="button">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">मराठी</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Marathi</span>
+</button>
+<!-- Gujarati -->
+<button class="lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center" type="button">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">ગુજરાતી</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gujarati</span>
+</button>
+<!-- Punjabi -->
+<button class="lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center" type="button">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">ਪੰਜਾਬੀ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Punjabi</span>
+</button>
+<!-- Telugu -->
+<button class="lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center" type="button">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">తెలుగు</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Telugu</span>
+</button>
+</div>
+</div>
+<!-- Official Sources, Diagnostics & Toll-Free Support Card -->
+<div class="bg-surface-container rounded-xl p-6 lg:p-8 space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="space-y-2 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Official Data Governance &amp; Integrity</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Data aggregated from official Government nodal servers: Ministry of Agriculture &amp; Farmers Welfare (MoA&amp;FW), India Meteorological Department (IMD Pune), and National Cyber Crime Reporting Portal.
+          </p>
+<div class="flex flex-wrap gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest">Build: KRISHI Sahyog v2.4</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest">PWA Engine: Workbox 6.5</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest">Last Checksum: 0x8FA2C01</span>
+</div>
+</div>
+<!-- Toll Free Direct Connect -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">phone_in_talk</span>
+</div>
+<div class="flex flex-col text-center sm:text-left">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kisan Call Centre Toll-Free (मुफ़्त हेल्पलाइन)</span>
+<span class="font-headline-lg text-headline-lg font-bold text-tertiary leading-tight">1800-180-1551</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Toll-free 6 AM – 10 PM daily in 22 languages</span>
+</div>
+<a class="px-5 py-3 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-bold hover:bg-tertiary-container transition-colors shadow-sm" href="tel:18001801551">
+            Call Free
+          </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simulation Offline Mode Switcher
+  const offlineToggleBtn = document.getElementById('offlineToggleBtn');
+  const toggleKnob = document.getElementById('toggleKnob');
+  const networkPill = document.getElementById('networkPill');
+  const networkDot = document.getElementById('networkDot');
+  const networkText = document.getElementById('networkText');
+  const toggleHint = document.getElementById('toggleHint');
+
+  let isOfflineSimulated = false;
+
+  offlineToggleBtn?.addEventListener('click', () => {
+    isOfflineSimulated = !isOfflineSimulated;
+    offlineToggleBtn.setAttribute('aria-pressed', isOfflineSimulated);
+
+    if (isOfflineSimulated) {
+      offlineToggleBtn.classList.remove('bg-surface-variant');
+      offlineToggleBtn.classList.add('bg-tertiary');
+      toggleKnob.classList.add('translate-x-7');
+      toggleKnob.classList.remove('translate-x-1');
+
+      networkPill.classList.remove('bg-primary');
+      networkPill.classList.add('bg-surface-dim', 'text-on-surface');
+      networkDot.classList.remove('bg-on-primary-container', 'animate-pulse');
+      networkDot.classList.add('bg-secondary');
+      networkText.textContent = 'Simulated Offline (बिना इंटरनेट)';
+
+      toggleHint.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary">offline_pin</span><span class="text-tertiary font-bold">Offline active! All cached schemes & weather ready to browse.</span>';
+    } else {
+      offlineToggleBtn.classList.remove('bg-tertiary');
+      offlineToggleBtn.classList.add('bg-surface-variant');
+      toggleKnob.classList.remove('translate-x-7');
+      toggleKnob.classList.add('translate-x-1');
+
+      networkPill.classList.remove('bg-surface-dim', 'text-on-surface');
+      networkPill.classList.add('bg-primary');
+      networkDot.classList.add('bg-on-primary-container', 'animate-pulse');
+      networkDot.classList.remove('bg-secondary');
+      networkText.textContent = 'Currently Online (कनेक्टेड)';
+
+      toggleHint.innerHTML = '<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span><span class="text-primary font-bold">All 54 schemes fully loaded in device memory.</span>';
+    }
+  });
+
+  // Manual Update Button Interaction
+  const updateBtn = document.getElementById('updateNowBtn');
+  const syncIcon = document.getElementById('syncIcon');
+  const syncTimestamp = document.getElementById('syncTimestamp');
+
+  updateBtn?.addEventListener('click', () => {
+    syncIcon?.classList.add('animate-spin');
+    updateBtn.disabled = true;
+    updateBtn.classList.add('opacity-80');
+
+    setTimeout(() => {
+      syncIcon?.classList.remove('animate-spin');
+      updateBtn.disabled = false;
+      updateBtn.classList.remove('opacity-80');
+
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      if (syncTimestamp) {
+        syncTimestamp.textContent = `Today at ${hours}:${minutes} (Fresh)`;
+      }
+      alert('ऑफ़लाइन डेटा सफलतापूर्वक अपडेट हो गया है! All 54 schemes and latest 7-day weather have been refreshed in local storage.');
+    }, 1200);
+  });
+
+  // Clear Saved Data Interaction
+  const clearBtn = document.getElementById('clearDataBtn');
+  clearBtn?.addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear cached offline schemes? You can re-download them anytime.')) {
+      alert('Cached data cleared. Connect to internet and click "Update" to re-cache.');
+    }
+  });
+
+  // Text Size Group Switching
+  const sizeBtns = document.querySelectorAll('.text-size-btn');
+  sizeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sizeBtns.forEach(b => {
+        b.classList.remove('bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm');
+        b.classList.add('bg-surface-container-low');
+      });
+      btn.classList.remove('bg-surface-container-low');
+      btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm');
+    });
+  });
+
+  // Location Selector reveal
+  const changeLocBtn = document.getElementById('changeLocBtn');
+  const districtSelector = document.getElementById('districtSelector');
+  const saveLocBtn = document.getElementById('saveLocBtn');
+  const pincodeInput = document.getElementById('pincodeInput');
+
+  changeLocBtn?.addEventListener('click', () => {
+    districtSelector?.classList.toggle('hidden');
+    pincodeInput?.focus();
+  });
+
+  saveLocBtn?.addEventListener('click', () => {
+    if (pincodeInput?.value.trim()) {
+      alert('Location changed to: ' + pincodeInput.value + '. Weather data cached for this district.');
+      districtSelector?.classList.add('hidden');
+    }
+  });
+
+  // Language Card Selection
+  const langCards = document.querySelectorAll('.lang-card');
+  langCards.forEach(card => {
+    card.addEventListener('click', () => {
+      langCards.forEach(c => {
+        c.className = 'lang-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center gap-1 text-center';
+        const badge = c.querySelector('.material-symbols-outlined');
+        if (badge) badge.remove();
+      });
+      card.className = 'lang-card p-4 rounded-xl bg-primary text-on-primary shadow-md transition-all flex flex-col items-center justify-center gap-1 text-center relative';
+      const check = document.createElement('span');
+      check.className = 'absolute top-2 right-2 material-symbols-outlined text-[16px] text-on-primary';
+      check.textContent = 'check_circle';
+      card.prepend(check);
+    });
+  });
+
+  // Audio Voice Test
+  const testAudioBtn = document.getElementById('testAudioBtn');
+  testAudioBtn?.addEventListener('click', () => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance("कृषि सहयोग ऑफ़लाइन सेवा में आपका स्वागत है। सभी सरकारी योजनाएं बिना इंटरनेट के उपलब्ध हैं।");
+      utterance.lang = 'hi-IN';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Audio preview: "कृषि सहयोग ऑफ़लाइन सेवा में आपका स्वागत है।" (Speech synthesis not supported on this browser)');
+    }
+  });
+</script></main><footer class="w-full bg-surface-container border-t border-surface-container-high text-on-surface mt-16"><div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10"><div class="grid grid-cols-1 md:grid-cols-12 gap-8"><div class="md:col-span-6 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm"><div class="flex items-start gap-3.5"><div class="p-2.5 rounded-lg bg-tertiary-fixed text-tertiary"><span class="material-symbols-outlined text-[26px]">support_agent</span></div><div><h3 class="font-headline-md text-headline-md text-on-surface mb-1">Kisan Call Centre Helpline</h3><p class="font-label-lg text-label-lg text-tertiary font-bold mb-1.5">1800-180-1551</p><p class="font-body-md text-body-md text-on-surface-variant text-[14px]">6:00 AM to 10:00 PM daily • Available across 22 regional Indian languages (२२ भाषाओं में मुफ़्त परामर्श).</p></div></div></div><div class="md:col-span-6 flex flex-col justify-between gap-4"><div class="bg-error-container/40 p-4 rounded-xl border border-error/20 flex items-center justify-between gap-4"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-error text-[24px]">warning</span><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface">Encountered a suspicious link or message?</span><span class="font-label-sm text-label-sm text-on-surface-variant">फर्जी योजना या धोखाधड़ी की तुरंत रिपोर्ट करें</span></div></div><a class="px-3.5 py-2 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-bold whitespace-nowrap hover:bg-error/90 transition-colors" data-path="check-scheme" href="#">Report Fraud</a></div><div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-low border border-outline-variant"><span class="material-symbols-outlined text-primary text-[22px]">cloud_done</span><p class="font-label-sm text-label-sm text-on-surface-variant"><strong class="text-on-surface font-semibold">Offline Guarantee:</strong> All saved schemes and today's weather remain accessible without an active internet connection.</p></div></div></div><div class="mt-8 pt-6 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-label-sm text-label-sm text-on-surface-variant text-center md:text-left max-w-3xl leading-relaxed"><strong class="font-semibold text-on-surface">Notice:</strong> KRISHI Sahyog is a non-profit farmer assistance companion. Information is aggregated directly from official Government portals (pmkisan.gov.in, agricoop.nic.in, mausam.imd.gov.in). We never ask for bank passwords, OTPs, or application processing fees.</p><div class="flex flex-col items-center md:items-end text-right flex-shrink-0"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Data updated: Today, 6:00 AM IST</span><span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]">verified</span>IMD &amp; MoA&amp;FW verified</span></div></div></div></footer></body></html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#E8F5E9" stroke="#0D631B" stroke-width="3"/>
+  <!-- Nurturing soil base -->
+  <path d="M16 42 C 22 50, 42 50, 48 42 C 45 39, 40 37, 32 39 C 24 37, 19 39, 16 42 Z" fill="#6D4C41"/>
+  <!-- Sprout Stem -->
+  <path d="M32 40 C 32 29, 32 21, 32 17" stroke="#0D631B" stroke-width="4" stroke-linecap="round"/>
+  <!-- Right Leaf -->
+  <path d="M32 28 C 38 22, 47 24, 47 30 C 43 34, 35 32, 32 28 Z" fill="#2E7D32"/>
+  <!-- Left Leaf -->
+  <path d="M32 22 C 26 17, 17 19, 17 24 C 21 28, 29 27, 32 22 Z" fill="#4CAF50"/>
+  <!-- Harvest Sun -->
+  <circle cx="45" cy="18" r="6" fill="#F9A825"/>
+</svg>

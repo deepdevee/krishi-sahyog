@@ -49,6 +49,15 @@
     }
     if (urlParams.has('category')) {
       activeCategory = urlParams.get('category');
+      filterChips.forEach((c) => {
+        if (c.getAttribute('data-category-filter') === activeCategory) {
+          c.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+          c.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        } else {
+          c.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        }
+      });
     }
 
     function renderList() {
@@ -315,8 +324,8 @@
 
       // Update Helplines
       const helplineContainer = document.getElementById('detail-helpline-grid');
-      if (hellineContainer && scheme.helplines) {
-        hellineContainer.innerHTML = scheme.helplines
+      if (helplineContainer && scheme.helplines) {
+        helplineContainer.innerHTML = scheme.helplines
           .map((hl) => {
             const title = (lang === 'hi' ? hl.title_hi : hl.title_en) || hl.title_en;
             return `

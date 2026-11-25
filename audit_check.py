@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from html.parser import HTMLParser
 
-BASE_DIR = Path(r"c:\Users\ddeep\Downloads\stitch_krishi_sahyog_farmer_platform\krishi-sahyog-frontend")
+BASE_DIR = Path(__file__).resolve().parent
 
 class LinkAndI18nParser(HTMLParser):
     def __init__(self, filename):

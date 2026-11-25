@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary":"#ffffff","outline":"#707a6c","error-container":"#ffdad6","primary-fixed-dim":"#88d982","primary-fixed":"#a3f69c","surface-tint":"#1b6d24","on-tertiary":"#ffffff","on-tertiary-container":"#ffeede","on-secondary-fixed-variant":"#5e3f35","surface-container-low":"#e9f7f3","surface-container-high":"#ddebe8","surface-dim":"#cfddd9","primary-container":"#2e7d32","on-primary-fixed":"#002204","secondary":"#79564b","on-primary-container":"#cbffc2","tertiary-fixed-dim":"#ffb957","on-secondary-fixed":"#2d150d","on-surface-variant":"#40493d","surface-bright":"#effcf9","on-primary-fixed-variant":"#005312","inverse-on-surface":"#e6f4f0","primary":"#0d631b","surface-variant":"#d8e5e2","surface-container":"#e3f1ed","surface-container-lowest":"#ffffff","secondary-fixed-dim":"#e9bdae","error":"#ba1a1a","on-background":"#121e1c","outline-variant":"#bfcaba","tertiary-container":"#986200","on-secondary-container":"#79574c","tertiary":"#774c00","inverse-primary":"#88d982","on-error":"#ffffff","on-error-container":"#93000a","surface-container-highest":"#d8e5e2","background":"#effcf9","secondary-container":"#fed0c1","surface":"#effcf9","on-surface":"#121e1c","tertiary-fixed":"#ffddb5","secondary-fixed":"#ffdbcf","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#643f00","on-tertiary-fixed":"#2a1800","inverse-surface":"#273331"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","gutter-tablet":"1.25rem","margin":"1rem","space-xl":"2.25rem","margin-desktop":"2.5rem","space-xs":"0.375rem","space-sm":"0.625rem","margin-tablet":"1.5rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-md":"1rem"},"fontFamily":{"headline-xl":["Noto Sans"],"body-lg":["Noto Sans"],"label-md":["Noto Sans"],"subtext-bilingual":["Noto Sans"],"headline-xl-mobile":["Noto Sans"],"label-lg":["Noto Sans"],"headline-lg-mobile":["Noto Sans"],"label-sm":["Noto Sans"],"body-md":["Noto Sans"],"headline-md":["Noto Sans"],"headline-lg":["Noto Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"48px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"700"}],"subtext-bilingual":["14px",{"lineHeight":"22px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"38px","fontWeight":"700"}],"label-lg":["16px",{"lineHeight":"24px","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"32px","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"18px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"30px","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"38px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="bg-surface-container-low border-b border-surface-container-high"><div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2"><div class="flex items-center gap-2"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant font-label-sm text-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span>Offline Ready / इंटरनेट के बिना भी उपलब्ध</span></span></div><div class="flex items-center gap-3"><div aria-label="Text size adjustments" class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5" role="group"><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" title="Decrease text size" type="button">A-</button><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface bg-surface-container rounded-full transition-colors" title="Default text size" type="button">A</button><button class="px-2 py-0.5 font-label-sm text-label-sm font-bold text-on-surface-variant hover:text-on-surface rounded-full transition-colors" title="Increase text size" type="button">A+</button></div><div class="flex items-center bg-surface-container-lowest rounded-full border border-outline-variant p-0.5"><button class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary text-on-primary transition-colors" type="button">English</button><button class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors" type="button">हिन्दी</button></div></div></div></div><div class="h-20 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-3 min-w-0 flex-shrink-0"><img alt="KRISHI Sahyog Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPS2FYwAmm_Gu0tH6cQTa0pqoW5IK18SArqney2YTO58MK87zpN5jpr4nFima-r4F48s6WUOkbVHU5u1Kq-rmm1eZiFAXnlUocMPvx7sPbgxrzdohTQh5XYwbcuj-D4TTIBx_4gy3f4F0KuWWnEePz3VG-NKr4oq6TrHYVP2qnVNY1euX61gZe9sR3aaFPzLngj7LDWlfhkPyjE36lj-iPEe4ot9RAHvulfcDxyN3JGBObMLebRnMyiN11"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-primary leading-none">KRISHI Sahyog</span><span class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant text-[11px] leading-tight">कृषि सहयोग • किसान सेवा पोर्टल</span></div></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-primary-container text-on-primary font-bold"><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="home" href="#"><span class="font-label-md text-label-md leading-none">Home</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">मुख्य पृष्ठ</span></a><a aria-current="page" class="flex flex-col px-3 py-2 rounded-lg transition-colors bg-primary-container text-on-primary font-bold" data-path="schemes" href="#"><span class="font-label-md text-label-md leading-none">Schemes</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">सरकारी योजनाएं</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="weather" href="#"><span class="font-label-md text-label-md leading-none">Weather</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">मौसम पूर्वानुमान</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="check-scheme" href="#"><span class="font-label-md text-label-md leading-none">Check Scheme</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">असली या नकली</span></a><a class="flex flex-col px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="offline-and-settings" href="#"><span class="font-label-md text-label-md leading-none">Offline &amp; Settings</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">ऑफ़लाइन डेटा</span></a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors shadow-sm font-label-md text-label-md min-h-[48px]" href="tel:18001801551"><span class="material-symbols-outlined text-[20px] text-tertiary">call</span><div class="flex flex-col text-left"><span class="leading-none font-bold">1800-180-1551</span><span class="text-[11px] leading-tight text-on-tertiary-fixed-variant">Toll-Free / मुफ़्त सलाह</span></div></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-32 bg-surface min-h-[calc(100vh-200px)]"><div class="flex flex-col w-full">
+<!-- Top Navigation & Action Context -->
+<section class="w-full bg-surface-container-low border-b border-surface-container-high py-4 px-4 sm:px-6 lg:px-8">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Home</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-[12px] opacity-60">/</span>
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1">
+<span>Government Schemes</span>
+<span class="font-normal text-on-surface-variant text-[11px]">(सरकारी योजनाएं)</span>
+</span>
+</nav>
+<!-- Offline Toolkit Bar -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Show Offline Toggle -->
+<label class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-outline-variant cursor-pointer select-none shadow-sm hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 accent-primary rounded cursor-pointer" id="offlineOnlyToggle" type="checkbox"/>
+<span class="material-symbols-outlined text-tertiary text-[18px]">bolt</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Show Offline Available Only</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[11px] hidden sm:inline">(केवल ऑफ़लाइन)</span>
+</label>
+<!-- Download All Button -->
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-sm hover:bg-primary transition-all active:scale-95" id="downloadAllBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="dlIcon">download_for_offline</span>
+<span id="dlText">Download All Schemes for Offline Use</span>
+<span class="font-label-sm text-[11px] text-on-primary-container font-normal hidden lg:inline">(सभी योजनाएं सेव करें)</span>
+<span class="ml-1 w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Title & Visual Context Banner -->
+<section class="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-surface-container to-surface-container-low p-6 sm:p-8 border border-outline-variant shadow-sm">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Direct Central &amp; State Database • 100% Genuine</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+            Government Schemes for Farmers
+            <span class="block font-headline-lg text-headline-lg font-normal text-on-surface-variant mt-1">किसानों के लिए सरकारी योजनाएं</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 max-w-xl">
+            Browse 50+ official schemes explained in simple, everyday words with eligibility, required documents, and step-by-step guides.
+          </p>
+</div>
+<!-- Quick Summary Mini Ledger Cards -->
+<div class="flex items-center gap-3 self-start md:self-auto">
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant shadow-sm flex flex-col items-center min-w-[110px]">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">54</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">Verified Schemes</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">सत्यापित योजनाएँ</span>
+</div>
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant shadow-sm flex flex-col items-center min-w-[110px]">
+<span class="font-headline-lg text-headline-lg font-bold text-tertiary">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">Free Apply</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">शून्य शुल्क</span>
+</div>
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant shadow-sm flex flex-col items-center min-w-[110px]">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">22</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">Languages</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">भाषाओं में सलाह</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Search & Advanced Filter Console -->
+<section class="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-4">
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-secondary/20 p-5 shadow-sm space-y-5">
+<!-- Primary Search Input with Tactile Voice Mic -->
+<div class="relative flex items-center">
+<span class="absolute left-4 text-on-surface-variant material-symbols-outlined text-[24px]">search</span>
+<input class="w-full h-14 pl-12 pr-16 bg-surface-container-low rounded-xl border-2 border-outline-variant font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary transition-all shadow-inner" id="schemeSearchInput" placeholder="Search by scheme name or benefit (e.g., Tractor, Borewell, ₹6000, PM-KISAN, Drought relief...)" type="text"/>
+<!-- Voice Search Trigger -->
+<button class="absolute right-2.5 h-10 w-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors shadow-sm active:scale-95" id="voiceSearchBtn" title="Click to speak in your regional language / बोलकर खोजें" type="button">
+<span class="material-symbols-outlined text-[22px]" id="micIcon">mic</span>
+</button>
+</div>
+<!-- Category Filter Chips (Snap Horizontal Scroll) -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">category</span>
+            Category Filter / श्रेणी चुनें:
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="activeFilterFeedback">Showing all 54 schemes</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryChips">
+<button class="category-chip active flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border-2 border-primary bg-primary text-on-primary shadow-sm transition-all" data-category="all" type="button">
+<span>All Schemes (सभी)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-on-primary text-primary text-[11px] font-bold">54</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="money" type="button">
+<span>💰 Money Support (नकद सहायता)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">12</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="loans" type="button">
+<span>🏦 Low-Interest Loans (ऋण व केसीसी)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">8</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="insurance" type="button">
+<span>🛡️ Crop Insurance (फसल बीमा)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">6</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="seeds" type="button">
+<span>🌱 Seeds &amp; Fertilizer (बीज व खाद)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">9</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="irrigation" type="button">
+<span>💧 Irrigation &amp; Water (सिंचाई)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">7</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="machinery" type="button">
+<span>🚜 Farm Machinery &amp; Tractor</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">5</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="solar" type="button">
+<span>☀️ Solar Pumps &amp; KUSUM</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">4</span>
+</button>
+<button class="category-chip flex items-center gap-2 px-3.5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" data-category="training" type="button">
+<span>📚 Training &amp; Organic (प्रशिक्षण)</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-bold">3</span>
+</button>
+</div>
+</div>
+<!-- Secondary Quick Dropdown Filters -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-surface-container">
+<!-- Gov Level -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1" for="govLevelSelect">
+<span class="material-symbols-outlined text-[15px]">account_balance</span>
+            Government Level (शासन स्तर):
+          </label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-low rounded-lg border border-outline-variant font-body-md text-on-surface text-[14px] focus:outline-none focus:border-primary appearance-none pr-8" id="govLevelSelect">
+<option value="all">All (Central &amp; State)</option>
+<option value="central">Central Govt (केंद्र सरकार)</option>
+<option value="state">State Govt (राज्य सरकार)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Land Size -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1" for="landSizeSelect">
+<span class="material-symbols-outlined text-[15px]">crop</span>
+            Farmer Land Size (जमीन का रकबा):
+          </label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-low rounded-lg border border-outline-variant font-body-md text-on-surface text-[14px] focus:outline-none focus:border-primary appearance-none pr-8" id="landSizeSelect">
+<option value="all">All Farmers (सभी किसान)</option>
+<option value="small">Small &amp; Marginal (&lt; 2 Hectare)</option>
+<option value="medium">Medium (2 - 10 Hectare)</option>
+<option value="large">Large Landholders (&gt; 10 Hectare)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Crop Type -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1" for="cropTypeSelect">
+<span class="material-symbols-outlined text-[15px]">eco</span>
+            Crop Type (फसल का प्रकार):
+          </label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-low rounded-lg border border-outline-variant font-body-md text-on-surface text-[14px] focus:outline-none focus:border-primary appearance-none pr-8" id="cropTypeSelect">
+<option value="all">All Crops (सभी फसलें)</option>
+<option value="cereals">Cereals (Wheat/Rice/Millets)</option>
+<option value="pulses">Pulses &amp; Oilseeds (दालें व तिलहन)</option>
+<option value="horticulture">Horticulture &amp; Vegetables (सब्जियां)</option>
+<option value="cotton">Cash Crops (Cotton/Sugarcane)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Schemes Card Grid -->
+<section class="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="schemesGrid">
+<!-- Card 1: PM-KISAN -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="money" data-scheme-card="">
+<div>
+<!-- Verified Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>VERIFIED CENTRAL SCHEME</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Direct Benefit
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                PM-KISAN Samman Nidhi
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                प्रधानमंत्री किसान सम्मान निधि योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">payments</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  ₹6,000 Every Single Year
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (₹2,000 direct transfer every 4 months)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              Direct cash deposit in your bank account to help purchase high-quality seeds, fertilizers, and meet initial farming expenses without taking private debt.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Eligibility:</span>
+<strong class="text-on-surface">Small &amp; Marginal Farmers (&lt;2 Ha)</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Payment Mode:</span>
+<strong class="text-on-surface">Aadhaar Linked DBT Account</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">handshake</span>
+                No Middlemen
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('PM-KISAN. प्रधानमंत्री किसान सम्मान निधि योजना. साल में ₹6,000 सीधे आपके खाते में.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+<!-- Card 2: PMFBY Crop Insurance -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="insurance" data-scheme-card="">
+<div>
+<!-- Verified Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span>VERIFIED CENTRAL SCHEME</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Crop Protection
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                Pradhan Mantri Fasal Bima (PMFBY)
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                प्रधानमंत्री फसल बीमा योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">flood</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  Up to 90% Payout for Crop Losses
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (Drought, heavy unseasonal rain, hailstorm &amp; pests)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              Complete insurance safety for your sown crop. Quick digital damage survey via satellite and direct compensation to protect you against erratic monsoon losses.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Farmer Premium:</span>
+<strong class="text-on-surface">Only 1.5% (Rabi) &amp; 2% (Kharif)</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Intimation Window:</span>
+<strong class="text-on-surface">Within 72 hrs of crop loss</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">cloud_sync</span>
+                Kharif &amp; Rabi Covered
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('प्रधानमंत्री फसल बीमा योजना. सूखे, ओले या बाढ़ से फसल खराब होने पर ९० प्रतिशत तक मुआवजा.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Kisan Credit Card (KCC) -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="loans" data-scheme-card="">
+<div>
+<!-- Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>BANKING &amp; CREDIT SUPPORT</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Low Interest
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                Kisan Credit Card (KCC)
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                किसान क्रेडिट कार्ड ऋण योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">percent</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  Loans up to ₹3 Lakh at only 4% Interest
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (Includes prompt repayment 3% rebate)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              Affordable working credit without mortgaging land or heavy assets. Flexible withdrawal and repayment cycle linked directly to your harvest season.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Collateral Free:</span>
+<strong class="text-on-surface">Up to ₹1.60 Lakh without mortgage</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Bank Processing:</span>
+<strong class="text-on-surface">Target 14-day turnaround</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">credit_card</span>
+                RuPay Debit Card Given
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('किसान क्रेडिट कार्ड योजना. मात्र ४ प्रतिशत ब्याज पर ३ लाख रुपये तक का कृषि लोन बिना बिचौलिए के प्राप्त करें.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+<!-- Card 4: SMAM Tractor Subsidy -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="machinery" data-scheme-card="">
+<div>
+<!-- Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">agriculture</span>
+<span>STATE &amp; CENTRAL SUBSIDY</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Farm Equipment
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                SMAM Agricultural Mechanization
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                कृषि यंत्रीकरण एवं ट्रैक्टर सब्सिडी योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">precision_manufacturing</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  40% to 50% Subsidy on Machinery
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (Tractors, Power Tillers, Rotavators &amp; Sprayers)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              The government pays nearly half the purchase cost for modern tools and implements. Special additional 10% bonus granted to women farmers and SC/ST groups.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Eligible Machinery:</span>
+<strong class="text-on-surface">Tractors, Harvesters, CHC Setup</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Subsidy Range:</span>
+<strong class="text-on-surface">Up to ₹1.5L to ₹5L maximum</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">woman</span>
+                Special Women Subsidy
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('ट्रैक्टर और कृषि यंत्र सब्सिडी योजना. रोटावेटर, कल्टीवेटर और ट्रैक्टर खरीद पर ४० से ५० प्रतिशत की सरकारी सब्सिडी.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+<!-- Card 5: PM-KUSUM Solar Water Pump -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="solar" data-scheme-card="">
+<div>
+<!-- Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">solar_power</span>
+<span>RENEWABLE ENERGY SUBSIDY</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Clean Power
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                PM-KUSUM Component-B (Solar Pump)
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                प्रधानमंत्री कुसुम सोलर पंप योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">sunny</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  60% Direct Govt Subsidy on Solar Pump
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (Farmer pays only 10%; remaining 30% bank loan)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              Replace costly diesel motors and irregular night electricity with clean solar irrigation pumps. Enjoy continuous, free water supply throughout daylight hours.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Capacity Range:</span>
+<strong class="text-on-surface">3 HP, 5 HP &amp; 7.5 HP Standalone</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Farmer Share:</span>
+<strong class="text-on-surface">Only 10% advance deposit</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">water_drop</span>
+                Zero Electricity Bill
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('प्रधानमंत्री कुसुम योजना. सोलर पंप पर ६० प्रतिशत सरकारी अनुदान. दिन में बिना बिजली बिल सिंचाई करें.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+<!-- Card 6: PKVY Organic Farming -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-primary/40 shadow-sm flex flex-col justify-between overflow-hidden hover:shadow-md transition-shadow" data-category="training" data-scheme-card="">
+<div>
+<!-- Header Banner -->
+<div class="bg-primary/10 border-b border-primary/20 px-4 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+<span>ORGANIC FARMING SUPPORT</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[11px] font-semibold border border-primary/30">
+              Soil Health
+            </span>
+</div>
+<div class="p-5 space-y-4">
+<!-- Scheme Title & Hindi Name -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+                Paramparagat Krishi Vikas (PKVY)
+              </h2>
+<p class="font-subtext-bilingual text-subtext-bilingual text-on-surface-variant">
+                परम्परागत कृषि विकास योजना
+              </p>
+</div>
+<!-- Benefit Highlight (Yellow Pill) -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-xl border border-tertiary/20 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[22px] flex-shrink-0 mt-0.5">compost</span>
+<div>
+<span class="font-label-md text-label-md text-tertiary font-bold block leading-tight">
+                  ₹50,000 / Hectare Financial Support
+                </span>
+<span class="font-label-sm text-[12px] text-on-tertiary-fixed-variant leading-none">
+                  (Disbursed over 3 years for organic inputs &amp; cluster pack)
+                </span>
+</div>
+</div>
+<!-- Plain Language Summary -->
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] leading-relaxed">
+              Transition away from expensive chemical fertilizers into eco-friendly organic farming. Includes free government certification (PGS-India) and premium market linkages.
+            </p>
+<!-- Metadata Details -->
+<div class="space-y-1.5 pt-2 border-t border-surface-container-high text-[13px] font-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Certification Fee:</span>
+<strong class="text-on-surface">100% Free / No Charges</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Cluster Size:</span>
+<strong class="text-on-surface">20 or more farmers group</strong>
+</div>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+                Saved Offline
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-[11px] text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                PGS Organic Tag
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-5 pt-0 grid grid-cols-12 gap-2 mt-4">
+<a class="col-span-8 h-12 flex items-center justify-center gap-1.5 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+<span>Read Simple Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="col-span-4 h-12 flex items-center justify-center gap-1 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors font-label-md text-label-md font-bold border border-tertiary/20" onclick="speakSummary('परम्परागत कृषि विकास योजना. जैविक खेती अपनाने पर ५० हजार रुपये प्रति हेक्टेयर की सहायता और निःशुल्क सरकारी प्रमाण पत्र.')" title="Listen in Hindi" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">volume_up</span>
+<span>सुनें</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Empty State Preview / Search Helper -->
+<section class="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-4">
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-secondary/20 p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">search_hands_free</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Can’t find your specific scheme?
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[15px] mt-0.5">
+            Check your spelling, search in Hindi (e.g. खाद, बोरवेल, ट्रैक्टर) or speak directly to a government agricultural officer.
+          </p>
+<p class="font-label-sm text-label-sm text-primary font-semibold mt-1">
+            योजना नहीं मिल रही? अपनी स्थानीय भाषा में खोजें या किसान कॉल सेंटर पर कॉल करें।
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto flex-shrink-0">
+<a class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary text-on-secondary hover:bg-secondary/90 transition-all font-label-md text-label-md font-bold shadow-sm" href="tel:18001801551">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>Call 1800-180-1551 (Toll-Free)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- High-Contrast Fraud Prevention & Scam Safety Alert -->
+<section class="max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 mb-4">
+<div class="bg-error-container/60 rounded-2xl border-2 border-error p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">gpp_maybe</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[11px] font-bold uppercase tracking-wider mb-1">
+              Important Farmer Safety Advisory / जरूरी चेतावनी
+            </div>
+<h4 class="font-headline-md text-headline-md text-on-error-container font-bold">
+              Did someone ask you for a registration fee or processing charge?
+            </h4>
+<p class="font-body-md text-body-md text-on-error-container/90 text-[15px] mt-1 max-w-2xl leading-relaxed">
+<strong class="font-bold text-error">99% of official government schemes are 100% FREE.</strong> Never pay money to any middleman, unverified WhatsApp link, or unregistered agent. Verify every link before sharing your bank passbook or Aadhaar OTP.
+            </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-error text-on-error hover:bg-error/90 font-label-md text-label-md font-bold shadow-sm transition-all" data-path="check-scheme" href="#">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Check Scheme Authenticity (असली या नकली जांचें)</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Accessible Interactive Micro-Interactions Script -->
+<script>
+  // Simple Speech Synthesis Helper for Farmers (Text-to-Speech)
+  function speakSummary(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'hi-IN';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert("ऑडियो उपलब्ध नहीं है / Audio not supported on this browser.");
+    }
+  }
+
+  // Interactive Filter and Search Handlers
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('schemeSearchInput');
+    const cards = document.querySelectorAll('[data-scheme-card]');
+    const categoryChips = document.querySelectorAll('.category-chip');
+    const feedback = document.getElementById('activeFilterFeedback');
+    const offlineOnlyToggle = document.getElementById('offlineOnlyToggle');
+    const voiceSearchBtn = document.getElementById('voiceSearchBtn');
+    const downloadAllBtn = document.getElementById('downloadAllBtn');
+    const dlIcon = document.getElementById('dlIcon');
+    const dlText = document.getElementById('dlText');
+
+    let currentCategory = 'all';
+
+    function filterCards() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      let matchCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const category = card.getAttribute('data-category');
+        const matchesQuery = query === '' || text.includes(query);
+        const matchesCategory = currentCategory === 'all' || category === currentCategory;
+
+        if (matchesQuery && matchesCategory) {
+          card.classList.remove('hidden');
+          matchCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (feedback) {
+        feedback.textContent = `Showing ${matchCount} scheme${matchCount === 1 ? '' : 's'}`;
+      }
+    }
+
+    // Category click handler
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => {
+          c.classList.remove('border-2', 'border-primary', 'bg-primary', 'text-on-primary', 'active');
+          c.classList.add('border', 'border-outline-variant', 'bg-surface-container-lowest', 'text-on-surface');
+        });
+        chip.classList.add('border-2', 'border-primary', 'bg-primary', 'text-on-primary', 'active');
+        chip.classList.remove('border-outline-variant', 'bg-surface-container-lowest', 'text-on-surface');
+
+        currentCategory = chip.getAttribute('data-category');
+        filterCards();
+      });
+    });
+
+    // Search input handler
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+    }
+
+    // Voice Input Simulator / Web Speech API
+    if (voiceSearchBtn) {
+      voiceSearchBtn.addEventListener('click', () => {
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          const recognition = new SpeechRecognition();
+          recognition.lang = 'hi-IN';
+          
+          voiceSearchBtn.classList.add('animate-pulse', 'bg-error');
+          recognition.start();
+
+          recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            searchInput.value = transcript;
+            filterCards();
+            voiceSearchBtn.classList.remove('animate-pulse', 'bg-error');
+          };
+
+          recognition.onerror = () => {
+            voiceSearchBtn.classList.remove('animate-pulse', 'bg-error');
+          };
+          
+          recognition.onend = () => {
+            voiceSearchBtn.classList.remove('animate-pulse', 'bg-error');
+          };
+        } else {
+          // Fallback demo for unsupported browsers
+          searchInput.value = 'Tractor Subsidy';
+          filterCards();
+        }
+      });
+    }
+
+    // Offline Download Visual Action
+    if (downloadAllBtn) {
+      downloadAllBtn.addEventListener('click', () => {
+        dlIcon.textContent = 'hourglass_top';
+        dlText.textContent = 'Saving 54 Schemes Locally...';
+        
+        setTimeout(() => {
+          dlIcon.textContent = 'cloud_done';
+          dlText.textContent = 'All 54 Schemes Saved Offline!';
+          downloadAllBtn.classList.remove('bg-primary-container');
+          downloadAllBtn.classList.add('bg-primary');
+        }, 800);
+      });
+    }
+  });
+</script></main><footer class="w-full bg-surface-container border-t border-surface-container-high text-on-surface mt-16"><div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10"><div class="grid grid-cols-1 md:grid-cols-12 gap-8"><div class="md:col-span-6 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm"><div class="flex items-start gap-3.5"><div class="p-2.5 rounded-lg bg-tertiary-fixed text-tertiary"><span class="material-symbols-outlined text-[26px]">support_agent</span></div><div><h3 class="font-headline-md text-headline-md text-on-surface mb-1">Kisan Call Centre Helpline</h3><p class="font-label-lg text-label-lg text-tertiary font-bold mb-1.5">1800-180-1551</p><p class="font-body-md text-body-md text-on-surface-variant text-[14px]">6:00 AM to 10:00 PM daily • Available across 22 regional Indian languages (२२ भाषाओं में मुफ़्त परामर्श).</p></div></div></div><div class="md:col-span-6 flex flex-col justify-between gap-4"><div class="bg-error-container/40 p-4 rounded-xl border border-error/20 flex items-center justify-between gap-4"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-error text-[24px]">warning</span><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface">Encountered a suspicious link or message?</span><span class="font-label-sm text-label-sm text-on-surface-variant">फर्जी योजना या धोखाधड़ी की तुरंत रिपोर्ट करें</span></div></div><a class="px-3.5 py-2 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-bold whitespace-nowrap hover:bg-error/90 transition-colors" data-path="check-scheme" href="#">Report Fraud</a></div><div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-low border border-outline-variant"><span class="material-symbols-outlined text-primary text-[22px]">cloud_done</span><p class="font-label-sm text-label-sm text-on-surface-variant"><strong class="text-on-surface font-semibold">Offline Guarantee:</strong> All saved schemes and today's weather remain accessible without an active internet connection.</p></div></div></div><div class="mt-8 pt-6 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-label-sm text-label-sm text-on-surface-variant text-center md:text-left max-w-3xl leading-relaxed"><strong class="font-semibold text-on-surface">Notice:</strong> KRISHI Sahyog is a non-profit farmer assistance companion. Information is aggregated directly from official Government portals (pmkisan.gov.in, agricoop.nic.in, mausam.imd.gov.in). We never ask for bank passwords, OTPs, or application processing fees.</p><div class="flex flex-col items-center md:items-end text-right flex-shrink-0"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Data updated: Today, 6:00 AM IST</span><span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]">verified</span>IMD &amp; MoA&amp;FW verified</span></div></div></div></footer></body></html>
